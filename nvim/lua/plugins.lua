@@ -16,7 +16,7 @@ vim.cmd([[
 return require('packer').startup(function(use)
 
   --- Package manager
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim' }
 
   -- Color theme  
   use {
@@ -30,6 +30,46 @@ return require('packer').startup(function(use)
     run = ':TSUpdate',
     config = require('plugin_config.nvim-treesitter')
   }
+
+  -- Cosmetic
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = require('plugin_config.lualine')
+  }
+
+  -- LSP
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      {
+        'RishabhRD/nvim-lsputils',
+        requires = { 'RishabhRD/popfix' },
+      },
+    },
+    config = require('plugin_config.nvim-lspconfig'),
+  }
+
+  use {
+    'j-hui/fidget.nvim', -- Display progress of LSP
+    config = require('plugin_config.fidget')
+  }
+
+  -- Snippets
+  use {
+    'L3MON4D3/LuaSnip',
+    config = require('plugin_config.LuaSnip')
+  }
+
+  -- Completion menu
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+        'hrsh7th/cmp-nvim-lsp',
+      },
+    config = require('plugin_config.nvim-cmp'),
+  }
+  use { 'saadparwaiz1/cmp_luasnip' }
 
   -- Search utilities
   use {

@@ -5,12 +5,11 @@ filetype plugin indent on   " https://vi.stackexchange.com/a/10125
 syntax enable               " enable syntax highlighting
 
 set termguicolors           " Enable 24-bit colors
-set clipboard=unnamed       " Share system clipboard
 set cursorline              " Highlight current line
 set foldmethod=syntax       " Syntax based folding
 set number                  " Display line numbers
 set relativenumber          " Print offset from highlighted line
-set scrolloff=999           " Keep the cursor centered
+set scrolloff=12           " Make the cursor see x lines above cursor
 set showbreak=↪             " Show line wrapping character
 
 set smartcase               " Use smartcase when searching

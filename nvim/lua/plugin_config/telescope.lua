@@ -4,6 +4,18 @@ return function ()
 
   local telescope = require('telescope')
 
+  local actions = require('telescope.actions')
+
+  require("telescope").setup{
+    defaults = {
+      mappings = {
+        i = {
+          ["<Esc>"] = actions.close
+        },
+      },
+    }
+  }
+
   telescope.load_extension('fzf')
 
   map('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<CR>')
