@@ -28,6 +28,8 @@ set noswapfile
 set undodir=/tmp/undo/
 set backupdir=/tmp/backup/
 
+let g:instant_username = "Nicolas"
+
 " Create those directories if needed
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")

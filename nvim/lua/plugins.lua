@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     config = require('plugin_config.lualine')
   }
 
+  --[[
   -- LSP
   use {
     'neovim/nvim-lspconfig',
@@ -50,15 +51,23 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-lspconfig'),
   }
 
+  -- Display progress of LSP
   use {
-    'j-hui/fidget.nvim', -- Display progress of LSP
+    'j-hui/fidget.nvim',
     config = require('plugin_config.fidget')
+  }
+
+  -- Code action menu
+  use {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+    config = require('plugin_config.neovim-code-action-menu')
   }
 
   -- Snippets
   use {
     'L3MON4D3/LuaSnip',
-    config = require('plugin_config.LuaSnip')
+    config = require('plugin_config.luasnip')
   }
 
   -- Completion menu
@@ -70,6 +79,18 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-cmp'),
   }
   use { 'saadparwaiz1/cmp_luasnip' }
+  ]]--
+
+  -- Comments
+  use {
+    'terrortylor/nvim-comment',
+    config = require('plugin_config.nvim-comment')
+  }
+
+  -- Live share
+  use {
+    'jbyuki/instant.nvim',
+  }
 
   -- Search utilities
   use {

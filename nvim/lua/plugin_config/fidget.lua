@@ -1,5 +1,5 @@
-return function()
+return function ()
 
-  require('fidget').setup{}
+  require('fidget').setup {}
 
 end

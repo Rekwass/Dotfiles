@@ -2,21 +2,28 @@ return function ()
 
   local lspconfig = require('lspconfig')
 
-  local utils = require('utils')
+  --local utils = require('utils')
 
-  local map = require("utils").map
+  --local map = require("utils").map
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  --capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   local opts = { noremap=true, silent=true }
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+  --[[
   map('n', '<leader>e', ':lua vim.diagnostic.open_float<CR>', opts)
   map('n', '[d', ':lua vim.diagnostic.goto_prev<CR>', opts)
   map('n', ']d', ':lua vim.diagnostic.goto_next<CR>', opts)
   map('n', '<space>q', ':lua vim.diagnostic.setloclist<CR>', opts)
+  ]]--
 
+  --[[
   local on_attach = function(ls_on_attach)
     return function(client, bufnr)
       local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
@@ -46,6 +53,7 @@ return function ()
       --require('illuminate').on_attach(client)
     end
   end
+  ]]--
 
   local servers = {
     { name = 'clangd' },
@@ -55,11 +63,12 @@ return function ()
 
   for _, server in ipairs(servers) do
     lspconfig[server.name].setup {
-      on_attach = on_attach(),
+      on_attach = on_attach,
       capabilities = capabilities,
     }
   end
 
+  --[[
   vim.lsp.protocol.CompletionItemKind = {
     "   (Text) ",
     "   (Method)",
@@ -87,5 +96,6 @@ return function ()
     "   (Operator)",
     "   (TypeParameter)"
   }
+  ]]--
 
 end
