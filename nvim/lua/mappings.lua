@@ -39,7 +39,6 @@ map('i', 'KJ', '<ESC>')
 map('i', 'JK', '<ESC>')
 
 -- Make navigation easier
-
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-h>', '<C-w>h')
 map('n', '<C-k>', '<C-w>k')
@@ -50,9 +49,5 @@ map('n', '<Space>', 'za')
 
 -- Replace selection
 map('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
-
--- TComment
---map('n', '<leader>c<Space>', ':TComment<CR>')
---map('v', '<leader>c<Space>', ':TComment<CR>')
 
 map('n', '<Up><Up><Down><Down><Left><Right><Left><Right>ba<space>', ':wq<ENTER>')

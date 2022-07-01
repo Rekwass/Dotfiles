@@ -2,26 +2,26 @@ return function ()
 
   local lspconfig = require('lspconfig')
 
-  --local utils = require('utils')
+  local utils = require('utils')
 
-  --local map = require("utils").map
+  local map = require("utils").map
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+  -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+  -- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
   --capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   local opts = { noremap=true, silent=true }
+  --[[
   vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-  --[[
+  ]]--
   map('n', '<leader>e', ':lua vim.diagnostic.open_float<CR>', opts)
   map('n', '[d', ':lua vim.diagnostic.goto_prev<CR>', opts)
   map('n', ']d', ':lua vim.diagnostic.goto_next<CR>', opts)
   map('n', '<space>q', ':lua vim.diagnostic.setloclist<CR>', opts)
-  ]]--
 
   --[[
   local on_attach = function(ls_on_attach)

@@ -75,7 +75,7 @@ _G.packer_plugins = {
     url = "https://github.com/jbyuki/instant.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\nƒ\5\0\0\5\0\31\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0034\4\0\0=\4\b\3=\3\n\0025\3\f\0005\4\v\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\24\0025\3\25\0004\4\0\0=\4\r\0034\4\0\0=\4\15\0035\4\26\0=\4\17\0035\4\27\0=\4\19\0034\4\0\0=\4\21\0034\4\0\0=\4\23\3=\3\28\0024\3\0\0=\3\29\0024\3\0\0=\3\30\2B\0\2\1K\0\1\0\15extensions\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\23disabled_filetypes\23section_separators\1\0\2\nright\bî‚²\tleft\bî‚°\25component_separators\1\0\2\nright\bî‚³\tleft\bî‚±\1\0\4\ntheme\tauto\18icons_enabled\2\25always_divide_middle\2\17globalstatus\1\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\nƒ\5\0\0\5\0\31\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0034\4\0\0=\4\b\3=\3\n\0025\3\f\0005\4\v\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\24\0025\3\25\0004\4\0\0=\4\r\0034\4\0\0=\4\15\0035\4\26\0=\4\17\0035\4\27\0=\4\19\0034\4\0\0=\4\21\0034\4\0\0=\4\23\3=\3\28\0024\3\0\0=\3\29\0024\3\0\0=\3\30\2B\0\2\1K\0\1\0\15extensions\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\23disabled_filetypes\23section_separators\1\0\2\tleft\bî‚°\nright\bî‚²\25component_separators\1\0\2\tleft\bî‚±\nright\bî‚³\1\0\4\ntheme\tauto\18icons_enabled\2\25always_divide_middle\2\17globalstatus\1\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -85,6 +85,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
+  },
+  ["nvim-lspconfig"] = {
+    config = { "\27LJ\2\nø\3\0\0\f\0\25\0C6\0\0\0'\2\1\0B\0\2\0025\1\2\0006\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0006\6\3\0009\6\b\0069\6\t\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\n\0006\6\3\0009\6\b\0069\6\v\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\f\0006\6\3\0009\6\b\0069\6\r\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\14\0006\6\3\0009\6\b\0069\6\15\6\18\a\1\0B\2\5\0014\2\4\0005\3\16\0>\3\1\0025\3\17\0>\3\2\0025\3\18\0>\3\3\0026\3\19\0\18\5\2\0B\3\2\4X\6\t€9\b\20\a8\b\b\0009\b\21\b5\n\22\0006\v\23\0=\v\23\n6\v\24\0=\v\24\nB\b\2\1E\6\3\3R\6õK\0\1\0\17capabilities\14on_attach\1\0\0\nsetup\tname\vipairs\1\0\1\tname\18rust_analyzer\1\0\1\tname\fpyright\1\0\1\tname\vclangd\15setloclist\r<space>q\14goto_next\a]d\14goto_prev\a[d\15open_float\15diagnostic\r<space>e\6n\bset\vkeymap\bvim\1\0\2\vsilent\2\fnoremap\2\14lspconfig\frequire\0" },
+    loaded = true,
+    path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-lsputils"] = {
+    loaded = true,
+    path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/nvim-lsputils",
+    url = "https://github.com/RishabhRD/nvim-lsputils"
   },
   ["nvim-treesitter"] = {
     config = { "\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14highlight\1\0\0\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0" },
@@ -113,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  popfix = {
+    loaded = true,
+    path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/popfix",
+    url = "https://github.com/RishabhRD/popfix"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/rekwass/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -131,22 +147,26 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-comment]], true)
 try_loadstring("\27LJ\2\nz\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\17line_mapping\21<leader>c<space>\21operator_mapping\14<leader>c\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
 time([[Config for nvim-comment]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\nø\3\0\0\f\0\25\0C6\0\0\0'\2\1\0B\0\2\0025\1\2\0006\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\a\0006\6\3\0009\6\b\0069\6\t\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\n\0006\6\3\0009\6\b\0069\6\v\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\f\0006\6\3\0009\6\b\0069\6\r\6\18\a\1\0B\2\5\0016\2\3\0009\2\4\0029\2\5\2'\4\6\0'\5\14\0006\6\3\0009\6\b\0069\6\15\6\18\a\1\0B\2\5\0014\2\4\0005\3\16\0>\3\1\0025\3\17\0>\3\2\0025\3\18\0>\3\3\0026\3\19\0\18\5\2\0B\3\2\4X\6\t€9\b\20\a8\b\b\0009\b\21\b5\n\22\0006\v\23\0=\v\23\n6\v\24\0=\v\24\nB\b\2\1E\6\3\3R\6õK\0\1\0\17capabilities\14on_attach\1\0\0\nsetup\tname\vipairs\1\0\1\tname\18rust_analyzer\1\0\1\tname\fpyright\1\0\1\tname\vclangd\15setloclist\r<space>q\14goto_next\a]d\14goto_prev\a[d\15open_float\15diagnostic\r<space>e\6n\bset\vkeymap\bvim\1\0\2\vsilent\2\fnoremap\2\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: onedark.nvim
 time([[Config for onedark.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tload\fonedark\frequire\0", "config", "onedark.nvim")
 time([[Config for onedark.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\nƒ\5\0\0\5\0\31\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0034\4\0\0=\4\b\3=\3\n\0025\3\f\0005\4\v\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\24\0025\3\25\0004\4\0\0=\4\r\0034\4\0\0=\4\15\0035\4\26\0=\4\17\0035\4\27\0=\4\19\0034\4\0\0=\4\21\0034\4\0\0=\4\23\3=\3\28\0024\3\0\0=\3\29\0024\3\0\0=\3\30\2B\0\2\1K\0\1\0\15extensions\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\23disabled_filetypes\23section_separators\1\0\2\nright\bî‚²\tleft\bî‚°\25component_separators\1\0\2\nright\bî‚³\tleft\bî‚±\1\0\4\ntheme\tauto\18icons_enabled\2\25always_divide_middle\2\17globalstatus\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\nô\4\0\0\n\0\28\00056\0\0\0'\2\1\0B\0\2\0029\0\2\0006\1\0\0'\3\3\0B\1\2\0026\2\0\0'\4\4\0B\2\2\0026\3\0\0'\5\3\0B\3\2\0029\3\5\0035\5\r\0005\6\v\0005\a\t\0005\b\a\0009\t\6\2=\t\b\b=\b\n\a=\a\f\6=\6\14\5B\3\2\0019\3\15\1'\5\16\0B\3\2\1\18\3\0\0'\5\17\0'\6\18\0'\a\19\0B\3\4\1\18\3\0\0'\5\17\0'\6\20\0'\a\21\0B\3\4\1\18\3\0\0'\5\17\0'\6\22\0'\a\23\0B\3\4\1\18\3\0\0'\5\17\0'\6\24\0'\a\25\0B\3\4\1\18\3\0\0'\5\17\0'\6\26\0'\a\27\0B\3\4\1K\0\1\0006:lua require('telescope.builtin').help_tags()<CR>\15<leader>fh4:lua require('telescope.builtin').buffers()<CR>\15<leader>fb6:lua require('telescope.builtin').live_grep()<CR>\15<leader>fg+:lua require('telescope.builtin').<CR>\14<leader>q7:lua require('telescope.builtin').find_files()<CR>\15<leader>ff\6n\bfzf\19load_extension\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\n<Esc>\1\0\0\nclose\nsetup\22telescope.actions\14telescope\bmap\nutils\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\ni\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\14highlight\1\0\0\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\nô\4\0\0\n\0\28\00056\0\0\0'\2\1\0B\0\2\0029\0\2\0006\1\0\0'\3\3\0B\1\2\0026\2\0\0'\4\4\0B\2\2\0026\3\0\0'\5\3\0B\3\2\0029\3\5\0035\5\r\0005\6\v\0005\a\t\0005\b\a\0009\t\6\2=\t\b\b=\b\n\a=\a\f\6=\6\14\5B\3\2\0019\3\15\1'\5\16\0B\3\2\1\18\3\0\0'\5\17\0'\6\18\0'\a\19\0B\3\4\1\18\3\0\0'\5\17\0'\6\20\0'\a\21\0B\3\4\1\18\3\0\0'\5\17\0'\6\22\0'\a\23\0B\3\4\1\18\3\0\0'\5\17\0'\6\24\0'\a\25\0B\3\4\1\18\3\0\0'\5\17\0'\6\26\0'\a\27\0B\3\4\1K\0\1\0006:lua require('telescope.builtin').help_tags()<CR>\15<leader>fh4:lua require('telescope.builtin').buffers()<CR>\15<leader>fb6:lua require('telescope.builtin').live_grep()<CR>\15<leader>fg+:lua require('telescope.builtin').<CR>\14<leader>q7:lua require('telescope.builtin').find_files()<CR>\15<leader>ff\6n\bfzf\19load_extension\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\n<Esc>\1\0\0\nclose\nsetup\22telescope.actions\14telescope\bmap\nutils\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\nƒ\5\0\0\5\0\31\0/6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\t\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0034\4\0\0=\4\b\3=\3\n\0025\3\f\0005\4\v\0=\4\r\0035\4\14\0=\4\15\0035\4\16\0=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\0035\4\22\0=\4\23\3=\3\24\0025\3\25\0004\4\0\0=\4\r\0034\4\0\0=\4\15\0035\4\26\0=\4\17\0035\4\27\0=\4\19\0034\4\0\0=\4\21\0034\4\0\0=\4\23\3=\3\28\0024\3\0\0=\3\29\0024\3\0\0=\3\30\2B\0\2\1K\0\1\0\15extensions\ftabline\22inactive_sections\1\2\0\0\rlocation\1\2\0\0\rfilename\1\0\0\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\4\0\0\rencoding\15fileformat\rfiletype\14lualine_c\1\2\0\0\rfilename\14lualine_b\1\4\0\0\vbranch\tdiff\16diagnostics\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\23disabled_filetypes\23section_separators\1\0\2\tleft\bî‚°\nright\bî‚²\25component_separators\1\0\2\tleft\bî‚±\nright\bî‚³\1\0\4\ntheme\tauto\18icons_enabled\2\25always_divide_middle\2\17globalstatus\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

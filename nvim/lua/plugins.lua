@@ -38,7 +38,6 @@ return require('packer').startup(function(use)
     config = require('plugin_config.lualine')
   }
 
-  --[[
   -- LSP
   use {
     'neovim/nvim-lspconfig',
@@ -51,6 +50,7 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-lspconfig'),
   }
 
+  --[[
   -- Display progress of LSP
   use {
     'j-hui/fidget.nvim',
