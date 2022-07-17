@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   --- Package manager
   use { 'wbthomason/packer.nvim' }
 
-  -- Color theme  
+  -- Color theme
   use {
     'navarasu/onedark.nvim',
     config = require('plugin_config.onedark')
@@ -86,6 +86,12 @@ return require('packer').startup(function(use)
   use {
     'terrortylor/nvim-comment',
     config = require('plugin_config.nvim-comment')
+  }
+
+  -- Highlight trailing whitespace
+  use {
+    'ntpeters/vim-better-whitespace',
+    config = require('plugin_config.vim-better-whitespace')
   }
 
   -- Live share
