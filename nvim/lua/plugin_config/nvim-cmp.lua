@@ -7,6 +7,33 @@ return function ()
 
   local luasnip = require("luasnip")
   local cmp = require("cmp")
+  local kind_icons = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "ﴲ",
+    Variable = "",
+    Class = "",
+    Interface = "ﰮ",
+    Module = "",
+    Property = "襁",
+    Unit = "",
+    Value = "",
+    Enum = "練",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "ﲀ",
+    Struct = "ﳤ",
+    Event = "",
+    Operator = "",
+    TypeParameter =""
+  }
 
   cmp.setup({
     sources = {
@@ -48,11 +75,20 @@ return function ()
         end
       end, { "i", "s" }),
     },
+    formatting = {
+      format = function(entry, vim_item)
+        -- Kind icons
+        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        -- Source
+        vim_item.menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          luasnip = "[LuaSnip]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[LaTeX]",
+        })[entry.source.name]
+        return vim_item
+      end
+    }
   })
-
-  --local types = require('cmp.types')
-
-  --vim.opt.completeopt = { 'menuone', 'noselect' }
-  -- Remove cmp status display
-  --vim.opt.shortmess:append('c')
 end
