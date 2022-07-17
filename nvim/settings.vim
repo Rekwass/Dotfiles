@@ -9,8 +9,9 @@ set cursorline              " Highlight current line
 set foldmethod=syntax       " Syntax based folding
 set number                  " Display line numbers
 set relativenumber          " Print offset from highlighted line
-set scrolloff=12           " Make the cursor see x lines above cursor
+set scrolloff=15            " Make the cursor see x lines above cursor
 set showbreak=↪             " Show line wrapping character
+set pumheight=15            " Maximum number of items to show in the popup menu
 
 set smartcase               " Use smartcase when searching
 
@@ -19,7 +20,8 @@ set tabstop=2               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
 set noautochdir             " Stop changing my directory >:C
-set shellcmdflag=-ic 	    " Allows vim to find the aliases from my .zshrc
+set shellcmdflag=-ic 	      " Allows vim to find the aliases from my .zshrc
+
 
 " Backup, undo and swapfiles
 set backup
