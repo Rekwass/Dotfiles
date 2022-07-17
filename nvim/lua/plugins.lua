@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
     cmd = 'CodeActionMenu',
     config = require('plugin_config.neovim-code-action-menu')
   }
+  --]]
 
   -- Snippets
   use {
@@ -79,7 +80,6 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-cmp'),
   }
   use { 'saadparwaiz1/cmp_luasnip' }
-  ]]--
 
   -- Comments
   use {

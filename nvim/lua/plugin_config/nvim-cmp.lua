@@ -11,6 +11,7 @@ return function ()
   cmp.setup({
     sources = {
         { name = "luasnip" },
+        { name = "nvim_lsp" },
     },
     snippet = {
         expand = function(args)
@@ -24,7 +25,8 @@ return function ()
     mapping = {
       ["<CR>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.close(), ["<Tab>"] = cmp.mapping(function(fallback)
+      ["<C-e>"] = cmp.mapping.close(),
+      ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
         elseif luasnip.expand_or_jumpable() then
