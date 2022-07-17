@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
     'j-hui/fidget.nvim',
     config = require('plugin_config.fidget')
   }
+  --]]
 
   -- Code action menu
   use {
@@ -63,7 +64,6 @@ return require('packer').startup(function(use)
     cmd = 'CodeActionMenu',
     config = require('plugin_config.neovim-code-action-menu')
   }
-  --]]
 
   -- Snippets
   use {
