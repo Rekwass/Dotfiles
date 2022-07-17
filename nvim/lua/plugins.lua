@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-treesitter')
   }
 
+  -- Highlight occurences of hovered word
+  use { 'RRethy/vim-illuminate' }
+
   -- Cosmetic
   use {
     'nvim-lualine/lualine.nvim',
