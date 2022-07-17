@@ -2,6 +2,6 @@ return function ()
 
   local map = require("utils").map
   
-  map('n', '<leader>ac', '<cmd>lua CodeActionMenu<CR>')
+  map('n', '<leader>ac', ':CodeActionMenu<CR>')
 
 end

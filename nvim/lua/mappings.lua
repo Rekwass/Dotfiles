@@ -50,4 +50,7 @@ map('n', '<Space>', 'za')
 -- Replace selection
 map('v', '<C-r>', '"hy:%s/<C-r>h//gc<left><left><left>')
 
+-- CodeActionMenu
+map('n', '<leader>ac', ':CodeActionMenu<CR>')
+
 map('n', '<Up><Up><Down><Down><Left><Right><Left><Right>ba<space>', ':wq<ENTER>')

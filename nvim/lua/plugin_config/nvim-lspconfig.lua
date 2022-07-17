@@ -144,7 +144,6 @@ return function ()
   end
   ]]--
 
-  --[[
   vim.lsp.protocol.CompletionItemKind = {
     "   (Text) ",
     "   (Method)",
@@ -172,6 +171,5 @@ return function ()
     "   (Operator)",
     "   (TypeParameter)"
   }
-  ]]--
 
 end
