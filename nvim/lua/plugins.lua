@@ -50,13 +50,11 @@ return require('packer').startup(function(use)
     config = require('plugin_config.nvim-lspconfig'),
   }
 
-  --[[
   -- Display progress of LSP
   use {
     'j-hui/fidget.nvim',
     config = require('plugin_config.fidget')
   }
-  --]]
 
   -- Code action menu
   use {
