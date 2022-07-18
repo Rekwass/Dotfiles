@@ -8,31 +8,31 @@ return function ()
   local luasnip = require("luasnip")
   local cmp = require("cmp")
   local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "ﴲ",
-    Variable = "",
-    Class = "",
-    Interface = "ﰮ",
-    Module = "",
-    Property = "襁",
-    Unit = "",
-    Value = "",
-    Enum = "練",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "ﲀ",
-    Struct = "ﳤ",
-    Event = "",
-    Operator = "",
-    TypeParameter =""
+    Text = " ",
+    Method = " ",
+    Function = " ",
+    Constructor = " ",
+    Field = "ﴲ ",
+    Variable = " ",
+    Class = " ",
+    Interface = "ﰮ ",
+    Module = " ",
+    Property = "襁 ",
+    Unit = " ",
+    Value = " ",
+    Enum = "練 ",
+    Keyword = " ",
+    Snippet = " ",
+    Color = " ",
+    File = " ",
+    Reference = " ",
+    Folder = " ",
+    EnumMember = " ",
+    Constant = "ﲀ ",
+    Struct = "ﳤ ",
+    Event = " ",
+    Operator = " ",
+    TypeParameter =" "
   }
 
   cmp.setup({
@@ -77,7 +77,7 @@ return function ()
     },
     formatting = {
       format = function(entry, vim_item)
-        vim_item.kind = string.format('%s (%s)', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        vim_item.kind = string.format('%s(%s)', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
         vim_item.menu = ({
           buffer = "[Buffer]",
           nvim_lsp = "[LSP]",
