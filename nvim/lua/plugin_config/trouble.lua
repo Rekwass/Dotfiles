@@ -1,4 +1,5 @@
 return function ()
+
   local map = require('utils').map
 
   require('trouble').setup {
@@ -8,4 +9,5 @@ return function ()
 
   map('n', '<leader>x', ':TroubleToggle<CR>')
   map('n', '<leader>X', ':TroubleToggle workspace_diagnostics<CR>')
+
 end
