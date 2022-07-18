@@ -6,7 +6,10 @@ syntax enable               " enable syntax highlighting
 
 set termguicolors           " Enable 24-bit colors
 set cursorline              " Highlight current line
-set foldmethod=syntax       " Syntax based folding
+
+set foldmethod=expr         " expression based folding (nerdsitter)
+set foldexpr=nvim_treesitter#foldexpr() " if anything breaks, use zx
+
 set number                  " Display line numbers
 set relativenumber          " Print offset from highlighted line
 set scrolloff=15            " Make the cursor see x lines above cursor
