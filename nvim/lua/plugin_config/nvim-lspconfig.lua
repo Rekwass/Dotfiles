@@ -1,6 +1,6 @@
 return function ()
 
-  local lspconfig = require('lspconfig')
+  local lsp = require('lspconfig')
 
   local utils = require('utils')
 
@@ -70,14 +70,62 @@ return function ()
   --   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
   -- end
 
+
   local servers = {
     { name = 'clangd' },
     { name = 'pyright' },
     { name = 'rust_analyzer' },
+  }
+
+  vim.lsp.protocol.CompletionItemKind = {
+    "   (Text) ",
+    "   (Method)",
+    "   (Function)",
+    "   (Constructor)",
+    " ﴲ  (Field)",
+    "   (Variable)",
+    "   (Class)",
+    " ﰮ  (Interface)",
+    "   (Module)",
+    " 襁 (Property)",
+    "   (Unit)",
+    "   (Value)",
+    " 練 (Enum)",
+    "   (Keyword)",
+    "   (Snippet)",
+    "   (Color)",
+    "   (File)",
+    "   (Reference)",
+    "   (Folder)",
+    "   (EnumMember)",
+    " ﲀ  (Constant)",
+    " ﳤ  (Struct)",
+    "   (Event)",
+    "   (Operator)",
+    "   (TypeParameter)"
+  }
+
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      underline = true,
+      update_in_insert = false,
+      virtual_text = {
+        prefix = ''
+      },
     }
-  
+  )
+
+  -- vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
+
+  vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
+  vim.fn.sign_define('DiagnosticSignWarn',  { text = ' ', texthl = 'DiagnosticSignWarn' })
+  vim.fn.sign_define('DiagnosticSignInfo',  { text = ' ', texthl = 'DiagnosticSignInfo' })
+  vim.fn.sign_define('DiagnosticSignHint',  { text = ' ', texthl = 'DiagnosticSignHint' })
+
   for _, server in ipairs(servers) do
-    lspconfig[server.name].setup {
+    lsp[server.name].setup {
       on_attach = on_attach,
       capabilities = capabilities,
     }

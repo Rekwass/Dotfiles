@@ -82,6 +82,13 @@ return require('packer').startup(function(use)
   }
   use { 'saadparwaiz1/cmp_luasnip' }
 
+  -- Diagnostics menu
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugin_config.trouble'),
+  }
+
   -- Comments
   use {
     'terrortylor/nvim-comment',
