@@ -97,6 +97,13 @@ return require('packer').startup(function(use)
     config = require('plugin_config.trouble'),
   }
 
+  -- Git modification (on the left)
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release',
+    config = require('plugin_config.gitsigns'),
+  }
+
   -- Comments
   use {
     'terrortylor/nvim-comment',
