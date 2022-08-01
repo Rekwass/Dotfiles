@@ -126,6 +126,7 @@ return require('packer').startup(function(use)
   use {
     'psf/black',
     config = require('plugin_config.black'),
+    ft = { "python " },
   }
 
   -- Marckdown preview
