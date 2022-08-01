@@ -10,10 +10,6 @@ map('v', '<leader>y', '"+y')
 map('n', '<leader>p', '"+p')
 map('v', '<leader>p', '"+p')
 
--- Buffer switching
-map('n', '<leader>j', ':bprevious<CR>')
-map('n', '<leader>l', ':bnext<CR>')
-
 -- Buffer manipulation
 map('n', '<leader>T', ':enew<CR>')
 map('n', '<leader>bq', ':bp <BAR> bd #<CR>')

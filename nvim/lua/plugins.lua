@@ -34,7 +34,15 @@ return require('packer').startup(function(use)
   -- Highlight occurences of hovered word
   use { 'RRethy/vim-illuminate' }
 
-  -- Cosmetic
+  -- Buffers on top of the screen
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugin_config.bufferline')
+  }
+
+  -- Line on the bottom of the screen
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -102,9 +110,7 @@ return require('packer').startup(function(use)
   }
 
   -- Live share
-  use {
-    'jbyuki/instant.nvim',
-  }
+  use { 'jbyuki/instant.nvim' }
 
   -- Search utilities
   use {
