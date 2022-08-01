@@ -21,14 +21,14 @@ return require('packer').startup(function(use)
   -- Color theme
   use {
     'navarasu/onedark.nvim',
-    config = require('plugin_config.onedark')
+    config = require('plugin_config.onedark'),
   }
 
   -- Enhanced highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = require('plugin_config.nvim-treesitter')
+    config = require('plugin_config.nvim-treesitter'),
   }
 
   -- Highlight occurences of hovered word
@@ -39,14 +39,14 @@ return require('packer').startup(function(use)
     'akinsho/bufferline.nvim',
     tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons',
-    config = require('plugin_config.bufferline')
+    config = require('plugin_config.bufferline'),
   }
 
   -- Line on the bottom of the screen
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = require('plugin_config.lualine')
+    config = require('plugin_config.lualine'),
   }
 
   -- LSP
@@ -64,20 +64,20 @@ return require('packer').startup(function(use)
   -- Display progress of LSP
   use {
     'j-hui/fidget.nvim',
-    config = require('plugin_config.fidget')
+    config = require('plugin_config.fidget'),
   }
 
   -- Code action menu
   use {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
-    config = require('plugin_config.neovim-code-action-menu')
+    config = require('plugin_config.neovim-code-action-menu'),
   }
 
   -- Snippets
   use {
     'L3MON4D3/LuaSnip',
-    config = require('plugin_config.luasnip')
+    config = require('plugin_config.luasnip'),
   }
 
   -- Completion menu
@@ -100,13 +100,13 @@ return require('packer').startup(function(use)
   -- Comments
   use {
     'terrortylor/nvim-comment',
-    config = require('plugin_config.nvim-comment')
+    config = require('plugin_config.nvim-comment'),
   }
 
   -- Highlight trailing whitespace
   use {
     'ntpeters/vim-better-whitespace',
-    config = require('plugin_config.vim-better-whitespace')
+    config = require('plugin_config.vim-better-whitespace'),
   }
 
   -- Live share
@@ -119,12 +119,21 @@ return require('packer').startup(function(use)
       {'nvim-lua/plenary.nvim'},
       {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
     },
-    config = require('plugin_config.telescope')
+    config = require('plugin_config.telescope'),
   }
 
+  -- Python code formatter
   use {
     'psf/black',
-    config = require('plugin_config.black')
+    config = require('plugin_config.black'),
+  }
+
+  -- Marckdown preview
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = "cd app && npm install",
+    setup = require('plugin_config.markdown-preview'),
+    ft = { "markdown" },
   }
 
   if packer_bootstrap then
