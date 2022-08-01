@@ -122,6 +122,11 @@ return require('packer').startup(function(use)
     config = require('plugin_config.telescope')
   }
 
+  use {
+    'psf/black',
+    config = require('plugin_config.black')
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end

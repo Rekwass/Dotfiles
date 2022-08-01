@@ -7,8 +7,9 @@ syntax enable               " enable syntax highlighting
 set termguicolors           " Enable 24-bit colors
 set cursorline              " Highlight current line
 
-set foldmethod=expr         " expression based folding (nerdsitter)
-set foldexpr=nvim_treesitter#foldexpr() " if anything breaks, use zx
+set foldmethod=expr         " Expression based folding (nerdsitter)
+set foldexpr=nvim_treesitter#foldexpr() " If anything breaks, use zx
+set foldlevel=99            " Sets default folding level to 99
 
 set number                  " Display line numbers
 set relativenumber          " Print offset from highlighted line
