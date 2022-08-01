@@ -104,6 +104,13 @@ return require('packer').startup(function(use)
     config = require('plugin_config.gitsigns'),
   }
 
+  -- Navigation
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = require('plugin_config.hop'),
+  }
+
   -- Comments
   use {
     'terrortylor/nvim-comment',
