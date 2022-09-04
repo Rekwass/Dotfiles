@@ -1,0 +1,14 @@
+{
+	"tekheader": {
+		"prefix": "tekh",
+		"body": [
+			"/*
+** EPITECH PROJECT, ${CURRENT_YEAR}
+** ${TM_FILENAME}
+** File description:
+** ${TM_FILENAME_BASE}
+*/"
+		],
+    "description": "EPITECH header"
+	}
+}
