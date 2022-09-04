@@ -1,4 +1,4 @@
-return function()
+return function ()
 
   require('gitsigns').setup {}
 
