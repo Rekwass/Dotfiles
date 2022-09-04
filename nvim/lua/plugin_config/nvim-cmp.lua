@@ -42,7 +42,7 @@ return function ()
     },
     snippet = {
         expand = function(args)
-            local luasnip = prequire("luasnip")
+            local luasnip = require("luasnip")
             if not luasnip then
                 return
             end
