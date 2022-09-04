@@ -39,6 +39,7 @@ return function ()
     { name = 'clangd' },
     { name = 'pyright' },
     { name = 'rust_analyzer' },
+    { name = 'hls' },
   }
 
   vim.lsp.protocol.CompletionItemKind = {

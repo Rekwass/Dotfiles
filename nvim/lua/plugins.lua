@@ -25,10 +25,11 @@ return require('packer').startup(function(use)
   }
 
   -- Portable package manager (LSP, DAP, Linters, ...)
- use {
-   'williamboman/mason.nvim',
-   config = require('plugin_config.mason'),
- }
+  use {
+    'williamboman/mason.nvim',
+    config = require('plugin_config.mason'),
+  }
+  use { 'williamboman/mason-lspconfig.nvim' }
 
   -- Enhanced highlighting
   use {
