@@ -34,6 +34,8 @@ return function ()
     Operator = " ",
     TypeParameter =" "
   }
+  local ELLIPSIS_CHAR = '…'
+  local MAX_LABEL_WIDTH = 69
 
   cmp.setup({
     sources = {
@@ -52,7 +54,6 @@ return function ()
     mapping = {
       ["<CR>"] = cmp.mapping.confirm { select = true },
       ["<C-Space>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.close(),
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -77,7 +78,9 @@ return function ()
     },
     formatting = {
       format = function(entry, vim_item)
+
         vim_item.kind = string.format('%s(%s)', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+
         vim_item.menu = ({
           buffer = "[Buffer]",
           nvim_lsp = "[LSP]",
@@ -85,6 +88,14 @@ return function ()
           nvim_lua = "[Lua]",
           latex_symbols = "[LaTeX]",
         })[entry.source.name]
+
+        local label = vim_item.abbr
+        local truncated_label = vim.fn.strcharpart(label, 0, MAX_LABEL_WIDTH)
+
+        if truncated_label ~= label then
+          vim_item.abbr = truncated_label .. ELLIPSIS_CHAR
+        end
+
         return vim_item
       end
     }
