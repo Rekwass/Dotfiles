@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
   use {
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = require('plugin_config.bufferline'),
   }
 
@@ -84,15 +84,14 @@ return require('packer').startup(function(use)
   -- Snippets
   use {
     'L3MON4D3/LuaSnip',
+    requires = { 'rafamadriz/friendly-snippets' },
     config = require('plugin_config.luasnip'),
   }
 
   -- Completion menu
   use {
     'hrsh7th/nvim-cmp',
-    requires = {
-        'hrsh7th/cmp-nvim-lsp',
-      },
+    requires = { 'hrsh7th/cmp-nvim-lsp' },
     config = require('plugin_config.nvim-cmp'),
   }
   use { 'saadparwaiz1/cmp_luasnip' }
@@ -106,7 +105,7 @@ return require('packer').startup(function(use)
   -- Diagnostics menu
   use {
     'folke/trouble.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = require('plugin_config.trouble'),
   }
 
