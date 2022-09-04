@@ -15,7 +15,7 @@ vim.cmd([[
 
 return require('packer').startup(function(use)
 
-  --- Package manager
+  -- Package manager
   use { 'wbthomason/packer.nvim' }
 
   -- Color theme
@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
     'navarasu/onedark.nvim',
     config = require('plugin_config.onedark'),
   }
+
+  -- Portable package manager (LSP, DAP, Linters, ...)
+ use {
+   'williamboman/mason.nvim',
+   config = require('plugin_config.mason'),
+ }
 
   -- Enhanced highlighting
   use {
@@ -37,7 +43,7 @@ return require('packer').startup(function(use)
   -- Buffers on top of the screen
   use {
     'akinsho/bufferline.nvim',
-    tag = "v2.*",
+    tag = 'v2.*',
     requires = 'kyazdani42/nvim-web-devicons',
     config = require('plugin_config.bufferline'),
   }
@@ -90,6 +96,12 @@ return require('packer').startup(function(use)
   }
   use { 'saadparwaiz1/cmp_luasnip' }
 
+  -- Autopairs
+  use {
+    "windwp/nvim-autopairs",
+    config = require('plugin_config.nvim-autopairs'),
+  }
+
   -- Diagnostics menu
   use {
     'folke/trouble.nvim',
@@ -140,15 +152,15 @@ return require('packer').startup(function(use)
   use {
     'psf/black',
     config = require('plugin_config.black'),
-    ft = { "python " },
+    ft = { 'python' },
   }
 
   -- Marckdown preview
   use {
     'iamcco/markdown-preview.nvim',
-    run = "cd app && npm install",
+    run = 'cd app && npm install',
     setup = require('plugin_config.markdown-preview'),
-    ft = { "markdown" },
+    ft = { 'markdown' },
   }
 
   if packer_bootstrap then
