@@ -1,10 +1,3 @@
--- local FormatOnSave = function() print("This buffer enters") end
---
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = {"*.cpp", "*.hpp"},
---   callback = FormatOnSave,
--- })
-
 vim.cmd([[
   function! Formatonsave()
     let l:formatdiff = 1
