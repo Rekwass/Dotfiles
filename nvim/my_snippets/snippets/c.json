@@ -2,12 +2,14 @@
 	"tekheader": {
 		"prefix": "tekh",
 		"body": [
-			"/*
-** EPITECH PROJECT, ${CURRENT_YEAR}
-** ${TM_FILENAME}
-** File description:
-** ${TM_FILENAME_BASE}
-*/"
+			"/*",
+      "** EPITECH PROJECT, ${CURRENT_YEAR}",
+      "** ${1:$TM_FILENAME}",
+      "** File description:",
+      "** ${2:$TM_FILENAME_BASE}",
+      "*/",
+      "",
+      "$0"
 		],
     "description": "EPITECH header"
 	}
