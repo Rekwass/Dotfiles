@@ -110,6 +110,51 @@
     ],
     "description": "Code snippet for 'class'"
   },
+  "function": {
+    "prefix": "fun",
+    "body": [
+      "${1:void} ${2:function}() noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function'"
+  },
+  "function1": {
+    "prefix": "fun1",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function1'"
+  },
+  "function2": {
+    "prefix": "fun2",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function2'"
+  },
+  "function3": {
+    "prefix": "fun3",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function3'"
+  },
+  "function4": {
+    "prefix": "fun4",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}, ${9:int} ${10:var4}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function4'"
+  },
   "class_function": {
     "prefix": "cfun",
     "body": [
@@ -151,6 +196,44 @@
       "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}) noexcept;"
     ],
     "description": "Code snippet for 'class function 2'"
+  },
+  "class_function3": {
+    "prefix": "cfun3",
+    "body": [
+      "/*",
+      " * ${7:description}",
+      " *",
+      " * ${8:return value}",
+      " *",
+      " * ${9:argument1} -> ${10:description}",
+      " *",
+      " * ${11:argument2} -> ${12:description}",
+      " *",
+      " * ${13:argument3} -> ${14:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 3'"
+  },
+  "class_function4": {
+    "prefix": "cfun4",
+    "body": [
+      "/*",
+      " * ${7:description}",
+      " *",
+      " * ${8:return value}",
+      " *",
+      " * ${9:argument1} -> ${10:description}",
+      " *",
+      " * ${11:argument2} -> ${12:description}",
+      " *",
+      " * ${13:argument3} -> ${14:description}",
+      " *",
+      " * ${15:argument4} -> ${16:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}, ${9:int} ${10:var4}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 4'"
   },
   "eclass": {
     "prefix": "eclass",
