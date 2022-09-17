@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
   }
   use { 'williamboman/mason-lspconfig.nvim' }
 
-  -- Enhanced highlighting
+  -- Enhanced colors and highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
