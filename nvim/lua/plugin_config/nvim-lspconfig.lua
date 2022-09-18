@@ -15,7 +15,6 @@ return function ()
   map('n', '<space>q', ':lua vim.diagnostic.setloclist()<CR>')
 
   local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
     local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     buf_set_keymap('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
