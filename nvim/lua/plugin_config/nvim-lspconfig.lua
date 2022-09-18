@@ -28,7 +28,7 @@ return function ()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     buf_set_keymap('n', '<space>D', ':lua vim.lsp.buf.type_definition()<CR>')
-    buf_set_keymap('n', '<space>rn', ':lua vim.lsp.buf.rename()<CR>')
+    buf_set_keymap('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
     buf_set_keymap('n', '<space>ca', ':lua vim.lsp.buf.code_action()<CR>')
     buf_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
     buf_set_keymap('n', '<space>f', ':lua vim.lsp.buf.formatting()<CR>')
@@ -94,5 +94,9 @@ return function ()
       capabilities = capabilities,
     }
   end
+
+vim.cmd([[
+  autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+]])
 
 end
