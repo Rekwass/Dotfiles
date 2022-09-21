@@ -36,6 +36,22 @@ local file_name_base = function(_, snip)
   })
 end, {}
 
+-- /*
+--  * ${2:description}
+--  */
+-- class ${1:MyClass} {
+--    public:
+--     $1() noexcept = default;
+--     $1($1 const& other) = default;
+--     $1($1&& other) noexcept = default;
+--
+--     $1& operator=($1 const& other) noexcept = default;
+--     $1& operator=($1&& other) noexcept = default;
+--     ~$1() noexcept = default;
+--
+--     private:
+-- };
+
 return {
 	s({trig="tekh", dscr="EPITECH Header"}, {
     t("/*"),
@@ -49,6 +65,16 @@ return {
 	s({trig="for", dscr="basic 'for' snippet"}, {
     t("for ("), i(1, "int"), t(" "), i(2, "i"), t(" = "), i(3, "0"), t("; "),
     rep(2), t(" < "), i(4, "length"), t("; "),
-    rep(2), t({") {", "\t"}), i(0), t({"", "}"})
+    rep(2), t({") {", "\t\t"}), i(0), t({"", "}"})
   }),
+  s({trig="class", dscr="'class' snippet"}, {
+    t({"/**", "* "}), i(2, "description"),
+    t({"", "*/", "class "}), i(1, "MyClass"), t({" {", "\t public:", "\t\t"}),
+    rep(1), t({"() noexcept = default;", "\t\t"}),
+    rep(1), t("("), rep(1), t({" const& other) = default;", "\t\t"}),
+    rep(1), t("("), rep(1), t({"&& other) noexcept = default;", "", "\t\t"}),
+    rep(1), t("& operator=("), rep(1), t({" const& other) noexcept = default;", "\t\t"}),
+    rep(1), t("& operator=("), rep(1), t({"&& other) noexcept = default;", "\t\t~"}),
+    rep(1), t({"() noexcept = default;", "", "\t private:", "};"})
+  })
 }
