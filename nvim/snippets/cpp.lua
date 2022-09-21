@@ -37,17 +37,18 @@ local file_name_base = function(_, snip)
 end, {}
 
 return {
-	s("tekh", {
-  t("/*"),
+	s({trig="tekh", dscr="EPITECH Header"}, {
+    t("/*"),
     t({"", "** EPITECH PROJECT, "}), d(1, date),
     t({"", "** "}), d(2, file_name),
     t({"", "** File description:"}),
     t({"", "** "}), d(3, file_name_base),
     t({"", "*/", "", ""}),
     i(0)
-  })
+  }),
+	s({trig="for", dscr="basic 'for' snippet"}, {
+    t("for ("), i(1, "int"), t(" "), i(2, "i"), t(" = "), i(3, "0"), t("; "),
+    rep(2), t(" < "), i(4, "length"), t("; "),
+    rep(2), t({") {", "\t"}), i(0), t({"", "}"})
+  }),
 }
-
--- return {
---   s("extras5", { extras.partial(os.date, "%Y") }),
--- }
