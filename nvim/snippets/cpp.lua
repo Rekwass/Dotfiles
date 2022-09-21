@@ -24,13 +24,25 @@ local date = function(_, snip)
   })
 end, {}
 
+local file_name = function(_, snip)
+  return sn (nil, {
+    i(1, snip.env.TM_FILENAME)
+  })
+end, {}
+
+local file_name_base = function(_, snip)
+  return sn (nil, {
+    i(1, snip.env.TM_FILENAME_BASE)
+  })
+end, {}
+
 return {
 	s("tekh", {
   t("/*"),
     t({"", "** EPITECH PROJECT, "}), d(1, date),
-    t({"", "** "}), i(2, "$TM_FILENAME"),
+    t({"", "** "}), d(2, file_name),
     t({"", "** File description:"}),
-    t({"", "** "}), i(3, "$TM_FILENAME_BASE"),
+    t({"", "** "}), d(3, file_name_base),
     t({"", "*/", "", ""}),
     i(0)
   })
