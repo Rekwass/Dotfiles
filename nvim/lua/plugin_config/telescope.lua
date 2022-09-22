@@ -21,7 +21,7 @@ return function ()
 
   telescope.load_extension('fzf')
 
-  map('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<CR>')
+  map('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files({hidden=true})<CR>')
   map('n', '<leader>fg', ':lua require(\'telescope.builtin\').live_grep()<CR>')
   map('n', '<leader>fb', ':lua require(\'telescope.builtin\').buffers()<CR>')
   map('n', '<leader>fh', ':lua require(\'telescope.builtin\').help_tags()<CR>')
