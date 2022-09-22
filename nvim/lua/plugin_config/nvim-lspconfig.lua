@@ -30,6 +30,7 @@ return function ()
     { name = "pyright" },
     { name = "rust_analyzer" },
     { name = "hls" },
+    { name = "yamlls"}
   }
 
   vim.lsp.protocol.CompletionItemKind = {
