@@ -2,7 +2,7 @@ return function ()
 
 local map = require("utils").map
 
-  require('bufferline').setup {
+  require("bufferline").setup {
     options = {
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -18,11 +18,11 @@ local map = require("utils").map
   }
 
 -- Buffer switching
-map('n', '<leader>j', ':BufferLineCyclePrev<CR>')
-map('n', '<leader>l', ':BufferLineCycleNext<CR>')
+map("n", "<leader>j", ":BufferLineCyclePrev<CR>")
+map("n", "<leader>l", ":BufferLineCycleNext<CR>")
 
 -- Buffer reordering
-map('n', '<leader>h', ':BufferLineMovePrev<CR>')
-map('n', '<leader>k', ':BufferLineMoveNext<CR>')
+map("n", "<leader>h", ":BufferLineMovePrev<CR>")
+map("n", "<leader>k", ":BufferLineMoveNext<CR>")
 
 end

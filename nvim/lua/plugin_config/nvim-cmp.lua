@@ -34,7 +34,7 @@ return function ()
     Operator = " ",
     TypeParameter =" "
   }
-  local ELLIPSIS_CHAR = '…'
+  local ELLIPSIS_CHAR = "…"
   local MAX_LABEL_WIDTH = 69
 
   cmp.setup({
@@ -80,7 +80,7 @@ return function ()
     formatting = {
       format = function(entry, vim_item)
 
-        vim_item.kind = string.format('%s(%s)', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        vim_item.kind = string.format("%s(%s)", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 
         vim_item.menu = ({
           buffer = "[Buffer]",

@@ -12,7 +12,7 @@ return function ()
   vim.g.mkdp_refresh_slow = 1
 
   -- Give a name to your window
-  vim.g.mkdp_page_title = '「${name}」'
+  vim.g.mkdp_page_title = "「${name}」"
 
   vim.g.mkdp_filetypes = { "markdown" }
 
