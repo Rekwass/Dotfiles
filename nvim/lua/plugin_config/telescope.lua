@@ -14,7 +14,7 @@ return function ()
         },
       },
       file_ignore_patterns = {
-        "node_modules", "build", "__pycache__", "__init__.py", "htmlcov", "*.png"
+        "node_modules/", "build/", "__pycache__/", "__init__.py", "htmlcov/", "*.png"
       },
     }
   }
