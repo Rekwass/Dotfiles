@@ -36,21 +36,7 @@ local file_name_base = function(_, snip)
   })
 end, {}
 
--- /*
---  * ${2:description}
---  */
--- class ${1:MyClass} {
---    public:
---     $1() noexcept = default;
---     $1($1 const& other) = default;
---     $1($1&& other) noexcept = default;
---
---     $1& operator=($1 const& other) noexcept = default;
---     $1& operator=($1&& other) noexcept = default;
---     ~$1() noexcept = default;
---
---     private:
--- };
+  -- std::cout << "Message" << std::endl;
 
 return {
 	s({trig="tekh", dscr="EPITECH Header"}, {
@@ -76,5 +62,11 @@ return {
     rep(1), t("& operator=("), rep(1), t({" const& other) noexcept = default;", "\t\t"}),
     rep(1), t("& operator=("), rep(1), t({"&& other) noexcept = default;", "\t\t~"}),
     rep(1), t({"() noexcept = default;", "", "\t private:", "};"})
+  }),
+  s({trig="out", dscr="'str::cout' snippet"}, {
+    t("std::cout << "), i(1, "\"Message\""), t(" << "), c(2, {
+      t("std::endl"),
+      t("\"\\n\"")
+    }), t(";")
   })
 }
