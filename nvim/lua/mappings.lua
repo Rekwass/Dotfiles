@@ -14,6 +14,10 @@ map("v", "<leader>p", "\"+p")
 map("n", "<leader>T", ":enew<CR>")
 map("n", "<leader>bq", ":bp <BAR> bd #<CR>")
 
+-- Change buffer width
+map("n", "<leader>+", ":vertical resize +1<CR>")
+map("n", "<leader>-", ":vertical resize -1<CR>")
+
 -- Remove search highlight with //
 map("n", "//", ":nohlsearch<CR>")
 
