@@ -31,7 +31,8 @@ return function ()
     { name = "rust_analyzer" },
     { name = "hls" },
     { name = "yamlls"},
-    { name = "cmake"}
+    { name = "cmake"},
+    { name = "bashls"}
   }
 
   vim.lsp.protocol.CompletionItemKind = {
