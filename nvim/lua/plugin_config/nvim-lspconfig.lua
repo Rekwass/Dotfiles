@@ -28,11 +28,12 @@ return function ()
   local servers = {
     { name = "clangd" },
     { name = "pyright" },
+    { name = "sumneko_lua"},
     { name = "rust_analyzer" },
-    { name = "hls" },
     { name = "yamlls"},
     { name = "cmake"},
-    { name = "bashls"}
+    { name = "bashls"},
+    { name = "hls" },
   }
 
   vim.lsp.protocol.CompletionItemKind = {
