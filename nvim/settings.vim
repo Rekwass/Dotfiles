@@ -19,8 +19,8 @@ set pumheight=15            " Maximum number of items to show in the popup menu
 
 set smartcase               " Use smartcase when searching
 
-set shiftwidth=2            " Number of spaces for auto-indent
-set tabstop=2               " Number of spaces per tab
+set shiftwidth=4            " Number of spaces for auto-indent
+set tabstop=4               " Number of spaces per tab
 set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
 set noautochdir             " Stop changing my directory >:C
