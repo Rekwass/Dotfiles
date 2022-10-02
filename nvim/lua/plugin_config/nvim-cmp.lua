@@ -44,7 +44,6 @@ return function()
         },
         snippet = {
             expand = function(args)
-                local luasnip = require("luasnip")
                 if not luasnip then
                     return
                 end
