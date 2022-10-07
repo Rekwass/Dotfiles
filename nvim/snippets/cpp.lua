@@ -22,19 +22,19 @@ local date = function(_, snip)
     return sn(nil, {
         i(1, snip.env.CURRENT_YEAR)
     })
-end, {}
+end
 
 local file_name = function(_, snip)
     return sn(nil, {
         i(1, snip.env.TM_FILENAME)
     })
-end, {}
+end
 
 local file_name_base = function(_, snip)
     return sn(nil, {
         i(1, snip.env.TM_FILENAME_BASE)
     })
-end, {}
+end
 
 -- std::cout << "Message" << std::endl;
 
