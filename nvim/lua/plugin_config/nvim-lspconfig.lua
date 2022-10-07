@@ -13,7 +13,7 @@ return function()
     map("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>")
     map("n", "]d", ":lua vim.diagnostic.goto_next()<CR>")
 
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
         local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
 
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -23,19 +23,7 @@ return function()
         buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>")
         buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>")
         buf_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
-        -- buf_set_keymap("n", "<space>D", ":lua vim.lsp.buf.type_definition()<CR>")
     end
-
-    local servers = {
-        { name = "clangd" },
-        { name = "pyright" },
-        { name = "sumneko_lua" },
-        { name = "rust_analyzer" },
-        { name = "yamlls" },
-        { name = "cmake" },
-        { name = "bashls" },
-        { name = "hls" },
-    }
 
     vim.lsp.protocol.CompletionItemKind = {
         "   (Text) ",
@@ -83,6 +71,29 @@ return function()
     vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
     vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
     vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
+
+
+    lsp["sumneko_lua"].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                }
+            }
+        }
+    }
+
+    local servers = {
+        { name = "clangd" },
+        { name = "pyright" },
+        { name = "rust_analyzer" },
+        { name = "yamlls" },
+        { name = "cmake" },
+        { name = "bashls" },
+        { name = "hls" },
+    }
 
     for _, server in ipairs(servers) do
         lsp[server.name].setup {

@@ -25,7 +25,7 @@ return function()
         local picker = action_state.get_current_picker(prompt_bufnr)
         local multi_selection = picker:get_multi_selection()
 
-        if #multi_selection > 1 then
+        if #multi_selection > 0 then
             require("telescope.pickers").on_close_prompt(prompt_bufnr)
             pcall(vim.api.nvim_set_current_win, picker.original_win_id)
 
