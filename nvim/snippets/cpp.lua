@@ -36,8 +36,6 @@ local file_name_base = function(_, snip)
     })
 end
 
--- std::cout << "Message" << std::endl;
-
 return {
     s({ trig = "tekh", dscr = "EPITECH Header" }, {
         t("/*"),
