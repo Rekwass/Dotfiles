@@ -6,8 +6,7 @@ return function()
 
     local map = utils.map
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     map("n", "<leader>of", ":lua vim.diagnostic.open_float()<CR>")
     map("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>")
@@ -23,6 +22,12 @@ return function()
         buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>")
         buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>")
         buf_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            desc = "Enable formatting on save",
+            pattern = "*",
+            command = "lua vim.lsp.buf.formatting_sync()",
+        })
     end
 
     vim.lsp.protocol.CompletionItemKind = {
@@ -101,11 +106,5 @@ return function()
             capabilities = capabilities,
         }
     end
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        desc = "Enable formatting on save",
-        pattern = "*",
-        command = "lua vim.lsp.buf.formatting_sync()",
-    })
 
 end
