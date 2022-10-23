@@ -39,6 +39,16 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-treesitter"),
     }
 
+    use({
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = require("plugin_config.noice"),
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    })
+
     -- Highlight occurences of hovered word
     use { "RRethy/vim-illuminate" }
 
@@ -67,12 +77,6 @@ return require("packer").startup(function(use)
             },
         },
         config = require("plugin_config.nvim-lspconfig"),
-    }
-
-    -- Display progress of LSP
-    use {
-        "j-hui/fidget.nvim",
-        config = require("plugin_config.fidget"),
     }
 
     -- Code action menu
