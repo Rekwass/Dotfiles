@@ -21,8 +21,8 @@ return require("packer").startup(function(use)
 
     -- Color theme
     use {
-        "navarasu/onedark.nvim",
-        config = require("plugin_config.onedark"),
+        "EdenEast/nightfox.nvim",
+        config = require("plugin_config.nightfox"),
     }
 
     -- Portable package manager (LSP, DAP, Linters, ...)
