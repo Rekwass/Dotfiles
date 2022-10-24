@@ -21,6 +21,7 @@ return function()
         buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>")
         buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>")
         buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>")
+        buf_set_keymap("n", "<leader>qf", ":lua vim.lsp.buf.code_action({apply = true})<CR>")
         buf_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
 
         vim.api.nvim_create_autocmd("BufWritePre", {
