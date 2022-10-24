@@ -1,7 +1,7 @@
 return function()
 
     require("nvim-treesitter.configs").setup {
-        ensure_installed = { "regex", "c", "cpp", "python", "lua" },
+        ensure_installed = { "regex", "bash", "c", "cpp", "python", "lua" },
 
         auto_install = true,
 
