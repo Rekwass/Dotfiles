@@ -50,9 +50,6 @@ return require("packer").startup(function(use)
         }
     }
 
-    -- Highlight occurences of hovered word
-    use { "RRethy/vim-illuminate" }
-
     -- Buffers on top of the screen
     use {
         "akinsho/bufferline.nvim",
