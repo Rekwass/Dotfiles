@@ -12,7 +12,7 @@ return function()
                     -- view: (default is cmdline view)
                     -- opts: any options passed to the view
                     -- icon_hl_group: optional hl_group for the icon
-                    cmdline = { pattern = "^:", icon = "" },
+                    cmdline = { conceal = false, pattern = "^:", icon = "" },
                     search_down = { kind = "search", pattern = "^/", icon = " ", ft = "regex" },
                     search_up = { kind = "search", pattern = "^%?", icon = " ", ft = "regex" },
                     filter = { pattern = "^:%s*!", icon = "$", ft = "sh" },
@@ -53,11 +53,7 @@ return function()
             },
             lsp_progress = {
                 enabled = true,
-                -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
-                -- See the section on formatting for more details on how to customize.
-                --- @type NoiceFormat|string
                 format = "lsp_progress",
-                --- @type NoiceFormat|string
                 format_done = "lsp_progress_done",
                 throttle = 1000 / 30, -- frequency to update lsp progress message
                 view = "mini",

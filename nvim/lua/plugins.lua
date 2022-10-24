@@ -39,7 +39,8 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-treesitter"),
     }
 
-    use({
+    -- Adds a lot of UI elements (popup, etc)
+    use {
         "folke/noice.nvim",
         event = "VimEnter",
         config = require("plugin_config.noice"),
@@ -47,7 +48,7 @@ return require("packer").startup(function(use)
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
         }
-    })
+    }
 
     -- Highlight occurences of hovered word
     use { "RRethy/vim-illuminate" }
