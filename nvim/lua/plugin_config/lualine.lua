@@ -1,6 +1,6 @@
 return function()
 
-    require("lualine").setup {
+    require("lualine").setup({
         options = {
             icons_enabled = true,
             theme = "auto",
@@ -28,6 +28,6 @@ return function()
         },
         tabline = {},
         extensions = {}
-    }
+    })
 
 end
