@@ -2,7 +2,7 @@ return function()
 
     local map = require("utils").map
 
-    require("bufferline").setup {
+    require("bufferline").setup({
         options = {
             diagnostics = "nvim_lsp",
             diagnostics_indicator = function(_, _, diagnostics_dict)
@@ -15,7 +15,7 @@ return function()
                 return s
             end
         }
-    }
+    })
 
     -- Buffer switching
     map("n", "<leader>j", ":BufferLineCyclePrev<CR>")
