@@ -128,8 +128,8 @@ return require("packer").startup(function(use)
 
     -- Comments
     use {
-        "terrortylor/nvim-comment",
-        config = require("plugin_config.nvim-comment"),
+        "numToStr/Comment.nvim",
+        config = require("plugin_config.comment")
     }
 
     -- Highlight trailing whitespace
