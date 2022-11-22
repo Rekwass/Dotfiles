@@ -40,17 +40,6 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-treesitter"),
     }
 
-    -- Adds a lot of UI elements (popup, etc)
-    -- use {
-    --     "folke/noice.nvim",
-    --     event = "VimEnter",
-    --     config = require("plugin_config.noice"),
-    --     requires = {
-    --         "MunifTanjim/nui.nvim",
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- }
-
     -- Buffers on top of the screen
     use {
         "akinsho/bufferline.nvim",
@@ -98,6 +87,17 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-cmp"),
     }
     use { "saadparwaiz1/cmp_luasnip" }
+
+    -- Adds a lot of UI elements (popup, etc)
+    use {
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = require("plugin_config.noice"),
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+    }
 
     -- Autopairs
     use {
