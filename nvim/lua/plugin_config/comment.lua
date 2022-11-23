@@ -7,9 +7,10 @@ return function()
         sticky = true,
         ---Lines to be ignored while (un)comment
         ignore = nil,
-        ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+        ---LHS (Left Hand Side) of operator-pending mappings in NORMAL and VISUAL mode
         opleader = {
-            line = "<leader>c<space>",
+            ---Line-comment keymap
+            line = "<leader>c",
         },
     })
 
