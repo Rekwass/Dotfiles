@@ -44,7 +44,7 @@ return function()
                 -- event is always "notify" and kind can be any log level as a string
                 -- The default routes will forward notifications to nvim-notify
                 -- Benefit of using Noice for this is the routing and consistent history view
-                enabled = false,
+                enabled = true,
                 view = "notify",
             },
             lsp_progress = {
@@ -52,7 +52,7 @@ return function()
                 format = "lsp_progress",
                 format_done = "lsp_progress_done",
                 throttle = 1000 / 33, -- frequency to update lsp progress message
-                view = "mini",
+                view = "notify",
             },
             throttle = 1000 / 33, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
             -- views = {}, ---@see section on views
@@ -85,6 +85,9 @@ return function()
                         winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
                     },
                 },
+                notify = {
+                    replace = true
+                }
             },
             routes = {}, --- @see section on routes
             status = {}, --- @see section on statusline components
