@@ -54,7 +54,7 @@ return function()
                 throttle = 1000 / 33, -- frequency to update lsp progress message
                 view = "mini",
             },
-            throttle = 33, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
+            throttle = 1000 / 33, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
             -- views = {}, ---@see section on views
             views = {
                 cmdline_popup = {
