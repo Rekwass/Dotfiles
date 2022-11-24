@@ -87,6 +87,12 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-cmp"),
     }
     use { "saadparwaiz1/cmp_luasnip" }
+    use {
+        "tzachar/cmp-tabnine",
+        run = "./install.sh",
+        requires = "hrsh7th/nvim-cmp",
+    }
+
 
     -- Adds a lot of UI elements (popup, etc)
     use {
