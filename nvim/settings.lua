@@ -1,3 +1,4 @@
+vim.cmd [[
 set nocompatible
 
 filetype plugin indent on   " https://vi.stackexchange.com/a/10125
@@ -44,3 +45,4 @@ endif
 if !isdirectory(expand(&backupdir))
   call mkdir(expand(&backupdir), "p")
 endif
+]]
