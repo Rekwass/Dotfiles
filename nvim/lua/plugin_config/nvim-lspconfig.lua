@@ -28,7 +28,7 @@ return function()
             desc = "Enable formatting on save",
             pattern = "*",
             group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
-            command = "lua vim.lsp.buf.formatting_sync()",
+            command = "lua vim.lsp.buf.format()",
         })
     end
 
