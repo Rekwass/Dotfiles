@@ -100,6 +100,7 @@ return function()
         { name = "cmake" },
         { name = "bashls" },
         { name = "hls" },
+        { name = "vimls" },
     }
 
     for _, server in ipairs(servers) do
