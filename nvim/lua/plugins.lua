@@ -139,7 +139,7 @@ return require("packer").startup(function(use)
         config = require("plugin_config.hop"),
     }
 
-    -- Comments
+    -- Comments lines
     use {
         "numToStr/Comment.nvim",
         config = require("plugin_config.comment")
@@ -163,6 +163,13 @@ return require("packer").startup(function(use)
                 run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" },
         },
         config = require("plugin_config.telescope"),
+    }
+
+    -- Todo Comments
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = require("plugin_config.todo-comments")
     }
 
     -- Python code formatter
