@@ -182,7 +182,7 @@ return require("packer").startup(function(use)
         ft = { "python" },
     }
 
-    -- Marckdown preview
+    -- Markdown preview
     use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
