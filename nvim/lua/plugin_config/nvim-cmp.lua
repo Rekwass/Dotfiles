@@ -85,6 +85,7 @@ return function()
                 vim_item.menu = ({
                     buffer = "[Buffer]",
                     nvim_lsp = "[LSP]",
+                    cmp_tabnine = "[Tabnine]",
                     luasnip = "[LuaSnip]",
                     nvim_lua = "[Lua]",
                     latex_symbols = "[LaTeX]",
