@@ -20,6 +20,9 @@ return require("packer").startup(function(use)
     -- Package manager
     use { "wbthomason/packer.nvim" }
 
+    -- Cache lua modules and load fast
+    use 'lewis6991/impatient.nvim'
+
     -- Color theme
     use {
         "EdenEast/nightfox.nvim",
