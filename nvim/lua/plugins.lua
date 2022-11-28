@@ -105,6 +105,13 @@ return require("packer").startup(function(use)
         }
     }
 
+    -- Greeter
+    use {
+        "goolord/alpha-nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = require("plugin_config.alpha"),
+    }
+
     -- Autopairs
     use {
         "windwp/nvim-autopairs",
