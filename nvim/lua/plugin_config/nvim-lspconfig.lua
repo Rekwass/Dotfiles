@@ -94,6 +94,7 @@ return function()
 
     local servers = {
         { name = "clangd" },
+        { name = "csharp_ls" },
         { name = "pyright" },
         { name = "rust_analyzer" },
         { name = "yamlls" },
