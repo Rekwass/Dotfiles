@@ -92,6 +92,17 @@ return function()
         }
     }
 
+    lsp.omnisharp.setup {
+        cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
+        enable_editorconfig_support = true,
+        enable_ms_build_load_projects_on_demand = false,
+        enable_roslyn_analyzers = false,
+        organize_imports_on_format = false,
+        enable_import_completion = false,
+        sdk_include_prereleases = true,
+        analyze_open_documents_only = false,
+    }
+
     local servers = {
         { name = "clangd" },
         { name = "pyright" },
@@ -100,6 +111,7 @@ return function()
         { name = "cmake" },
         { name = "bashls" },
         { name = "hls" },
+        { name = "vimls" },
     }
 
     for _, server in ipairs(servers) do

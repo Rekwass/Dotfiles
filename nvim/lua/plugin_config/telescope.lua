@@ -106,7 +106,7 @@ return function()
     require("telescope").setup({
         defaults = {
             file_ignore_patterns = {
-                "node_modules/", "build/", "__pycache__/", "__init__.py", "htmlcov/", "*.png", ".git/"
+                "node_modules/", "build/", "__pycache__/", "__init__.py", "htmlcov/", ".git/"
             },
             mappings = {
                 i = {

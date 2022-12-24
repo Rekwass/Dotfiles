@@ -20,6 +20,9 @@ return require("packer").startup(function(use)
     -- Package manager
     use { "wbthomason/packer.nvim" }
 
+    -- Cache lua modules and load fast
+    use 'lewis6991/impatient.nvim'
+
     -- Color theme
     use {
         "EdenEast/nightfox.nvim",
@@ -105,6 +108,13 @@ return require("packer").startup(function(use)
         }
     }
 
+    -- Greeter
+    use {
+        "goolord/alpha-nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = require("plugin_config.alpha"),
+    }
+
     -- Autopairs
     use {
         "windwp/nvim-autopairs",
@@ -132,7 +142,7 @@ return require("packer").startup(function(use)
         config = require("plugin_config.hop"),
     }
 
-    -- Comments
+    -- Comments lines
     use {
         "numToStr/Comment.nvim",
         config = require("plugin_config.comment")
@@ -158,6 +168,13 @@ return require("packer").startup(function(use)
         config = require("plugin_config.telescope"),
     }
 
+    -- Todo Comments
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = require("plugin_config.todo-comments")
+    }
+
     -- Python code formatter
     use {
         "psf/black",
@@ -165,7 +182,7 @@ return require("packer").startup(function(use)
         ft = { "python" },
     }
 
-    -- Marckdown preview
+    -- Markdown preview
     use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
