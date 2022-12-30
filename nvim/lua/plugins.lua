@@ -86,7 +86,12 @@ return require("packer").startup(function(use)
     -- Completion menu
     use {
         "hrsh7th/nvim-cmp",
-        requires = { "hrsh7th/cmp-nvim-lsp" },
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+        },
         config = require("plugin_config.nvim-cmp"),
     }
     use { "saadparwaiz1/cmp_luasnip" }
@@ -131,7 +136,6 @@ return require("packer").startup(function(use)
     -- Git modification (on the left)
     use {
         "lewis6991/gitsigns.nvim",
-        tag = "release",
         config = require("plugin_config.gitsigns"),
     }
 
