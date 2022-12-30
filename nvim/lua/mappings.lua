@@ -50,6 +50,22 @@ map("n", "<Space>", "za")
 -- Replace selection
 map("v", "<C-r>", "\"hy:%s/<C-r>h//gc<left><left><left>")
 
+-- Move selection
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor in middle when searching keyword
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+
+-- Delete to the void register
+map("n", "<leader>d", "\"_d")
+map("v", "<leader>d", "\"_d")
+
+-- TODO: Find key to map this on
+-- Paste over selection and don't copy
+-- map("x", "<leader>p", "\"_dP")
+
 -- CodeActionMenu
 map("n", "<leader>ac", ":CodeActionMenu<CR>")
 
