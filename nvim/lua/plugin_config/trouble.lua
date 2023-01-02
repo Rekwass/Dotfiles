@@ -7,7 +7,7 @@ return function()
         use_diagnostic_signs = false,
     }
 
-    map("n", "<leader>x", ":TroubleToggle<CR>")
-    map("n", "<leader>X", ":TroubleToggle workspace_diagnostics<CR>")
+    map("n", "<leader>x", "<Cmd>TroubleToggle<CR>")
+    map("n", "<leader>X", "<Cmd>TroubleToggle workspace_diagnostics<CR>")
 
 end

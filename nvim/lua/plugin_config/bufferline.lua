@@ -18,11 +18,11 @@ return function()
     })
 
     -- Buffer switching
-    map("n", "<leader>j", ":BufferLineCyclePrev<CR>")
-    map("n", "<leader>l", ":BufferLineCycleNext<CR>")
+    map("n", "<leader>j", "<Cmd>BufferLineCyclePrev<CR>")
+    map("n", "<leader>l", "<Cmd>BufferLineCycleNext<CR>")
 
     -- Buffer reordering
-    map("n", "<leader>h", ":BufferLineMovePrev<CR>")
-    map("n", "<leader>k", ":BufferLineMoveNext<CR>")
+    map("n", "<leader>h", "<Cmd>BufferLineMovePrev<CR>")
+    map("n", "<leader>k", "<Cmd>BufferLineMoveNext<CR>")
 
 end
