@@ -8,9 +8,9 @@ return function()
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-    map("n", "<leader>of", ":lua vim.diagnostic.open_float()<CR>")
-    map("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>")
-    map("n", "]d", ":lua vim.diagnostic.goto_next()<CR>")
+    map("n", "<leader>of", "<Cmd>lua vim.diagnostic.open_float()<CR>")
+    map("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>")
+    map("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>")
 
     local on_attach = function(client, bufnr)
         local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
@@ -18,31 +18,31 @@ return function()
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
         if client.supports_method "textDocument/declaration" then
-            buf_set_keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>")
+            buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
         end
 
         if client.supports_method "textDocument/definition" then
-            buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
+            buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
         end
 
         if client.supports_method "textDocument/implementation" then
-            buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>")
+            buf_set_keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
         end
 
         if client.supports_method "textDocument/references" then
-            buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>")
+            buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>")
         end
 
         if client.supports_method "textDocument/hover" then
-            buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>")
+            buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
         end
 
         if client.supports_method "textDocument/codeAction" then
-            buf_set_keymap("n", "<leader>qf", ":lua vim.lsp.buf.code_action({apply = true})<CR>")
+            buf_set_keymap("n", "<leader>qf", "<Cmd>lua vim.lsp.buf.code_action({apply = true})<CR>")
         end
 
         if client.supports_method "textDocument/rename" then
-            buf_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
+            buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
         end
 
         if client.supports_method "textDocument/formatting" then
