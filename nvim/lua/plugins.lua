@@ -182,7 +182,6 @@ return require("packer").startup(function(use)
     -- Python code formatter
     use {
         "psf/black",
-        config = require("plugin_config.black"),
         ft = { "python" },
     }
 

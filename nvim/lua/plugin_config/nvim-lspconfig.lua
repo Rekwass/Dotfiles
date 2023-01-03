@@ -75,6 +75,17 @@ return function()
     vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
 
+    lsp["pyright"].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            desc = "Enable formatting on save",
+            pattern = "*",
+            group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
+            command = "Black",
+        })
+    }
+
     lsp["sumneko_lua"].setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -87,7 +98,7 @@ return function()
         }
     }
 
-    lsp.omnisharp.setup {
+    lsp["omnisharp"].setup {
         on_attach = on_attach,
         capabilities = capabilities,
         cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
@@ -102,7 +113,6 @@ return function()
 
     local servers = {
         { name = "clangd" },
-        { name = "pyright" },
         { name = "rust_analyzer" },
         { name = "yamlls" },
         { name = "cmake" },
