@@ -102,17 +102,6 @@ return require("packer").startup(function(use)
     }
 
 
-    -- Adds a lot of UI elements (popup, etc)
-    use {
-        "folke/noice.nvim",
-        event = "VimEnter",
-        config = require("plugin_config.noice"),
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
-    }
-
     -- Greeter
     use {
         "goolord/alpha-nvim",
