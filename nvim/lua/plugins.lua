@@ -101,7 +101,6 @@ return require("packer").startup(function(use)
         requires = "hrsh7th/nvim-cmp",
     }
 
-
     -- Greeter
     use {
         "goolord/alpha-nvim",

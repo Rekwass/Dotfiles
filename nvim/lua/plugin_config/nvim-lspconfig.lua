@@ -74,7 +74,6 @@ return function()
     vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
     vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
-
     lsp["pyright"].setup {
         on_attach = on_attach,
         capabilities = capabilities,
