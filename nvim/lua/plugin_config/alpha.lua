@@ -10,7 +10,7 @@ return function()
         "",
         "",
         "                               __,,,µ╓╓╓╓╓,,,_ _                               ",
-        "                        __,p╗╣╣y╣╣╣╬╬╬╬╬╣╬╣╣╬╣╣╣╬╗╗╓                           ",
+        "                        __,╓╗╣╣╣╣╣╣╬╬╬╬╬╣╬╣╣╬╣╣╣╬╗╗╓                           ",
         "                     _╓#▓▓▓╣╣╣╣╬╬╣╬╣╣╣╬▓█╬╬╣╣╣╬╬╣╬╬▓╬╣╬╓_                      ",
         "                 _,▄▓╬╬██▓▓█╬█████╬╬▓████▓╣╬╣╬▓████▓╬╣╬╬╬╬╗,                   ",
         "         _,▄▓▓████████████████████╬██████╬▓███████▓╬╬╬╣╬╬╬╬▓██▌                ",
@@ -26,7 +26,7 @@ return function()
         "     ]╬╬╬╣╬╣╬╣╣╬╬╣╣╣▓███████████████████████████████████▓██████████▓╬▓██████▌,▌",
         "     ╞╣╣╣╣╣╣╣╣╣╣╬╣╬╣████████████████████████████████████▓▓█████████████████▌▄█▌",
         "     ╞╣╬╬╣╬╬╬╣╣╣╬╬╬╬╬▓██████████████████████████████████▓█████████████████████ ",
-        "     j╣╬╬╬╬╬╬╬╬╬╣╣▓▓▓█████████████████████████████████████▓╣████████████████▌  ",
+        "     ]╣╬╬╬╬╬╬╬╬╬╣╣▓▓▓█████████████████████████████████████▓╣████████████████▌  ",
         "      ╣╣╬╣╣╣╣╣╬╣╬╬╬▓██████████████████████████████████████▓╣█████████████████ ,",
         "      ║╬╬╬╣╣╣╬╣╬╬╬╣█╬██████████████████████████████████████╣███████████████████",
         "       ╣╣╣╣╣╬╣╣╬╬╣▓╬╣╬█╬████████████████████████████████▓██╣███████████████████",
@@ -55,18 +55,21 @@ return function()
 
     -- Set menu
     dashboard.section.buttons.val = {
-        dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
+        dashboard.button("e", "ﱐ  > New file", ":ene <BAR> startinsert <CR>"),
         dashboard.button("f", "  > Find file", ":lua require(\"telescope.builtin\").find_files({hidden=true})<CR>"),
-        dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-        dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+        dashboard.button("g", "  > Grep content", ":lua require(\"telescope.builtin\").live_grep()<CR>"),
+        dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
+        dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
     }
 
     -- Send config to alpha
     alpha.setup(dashboard.opts)
 
-    -- Disable folding on alpha buffer
-    vim.cmd([[
-    autocmd FileType alpha setlocal nofoldenable
-    ]])
+    vim.api.nvim_create_autocmd("FileType", {
+        desc = "Disable folding on alpha buffer",
+        pattern = "alpha",
+        group = vim.api.nvim_create_augroup("alpha_nvim", { clear = true }),
+        command = "setlocal nofoldenable",
+    })
 
 end

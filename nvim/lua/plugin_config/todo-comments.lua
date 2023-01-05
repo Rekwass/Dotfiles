@@ -68,7 +68,7 @@ return function()
         },
     }
 
-    map("n", "[t", ":lua require(\"todo-comments\").jump_prev()<CR>")
-    map("n", "]t", ":lua require(\"todo-comments\").jump_next()<CR>")
+    map("n", "[t", "<Cmd>lua require(\"todo-comments\").jump_prev()<CR>")
+    map("n", "]t", "<Cmd>lua require(\"todo-comments\").jump_next()<CR>")
 
 end

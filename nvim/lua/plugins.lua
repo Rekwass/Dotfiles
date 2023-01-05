@@ -86,7 +86,12 @@ return require("packer").startup(function(use)
     -- Completion menu
     use {
         "hrsh7th/nvim-cmp",
-        requires = { "hrsh7th/cmp-nvim-lsp" },
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+        },
         config = require("plugin_config.nvim-cmp"),
     }
     use { "saadparwaiz1/cmp_luasnip" }
@@ -94,18 +99,6 @@ return require("packer").startup(function(use)
         "tzachar/cmp-tabnine",
         run = "./install.sh",
         requires = "hrsh7th/nvim-cmp",
-    }
-
-
-    -- Adds a lot of UI elements (popup, etc)
-    use {
-        "folke/noice.nvim",
-        event = "VimEnter",
-        config = require("plugin_config.noice"),
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
     }
 
     -- Greeter
@@ -131,7 +124,6 @@ return require("packer").startup(function(use)
     -- Git modification (on the left)
     use {
         "lewis6991/gitsigns.nvim",
-        tag = "release",
         config = require("plugin_config.gitsigns"),
     }
 
@@ -178,7 +170,6 @@ return require("packer").startup(function(use)
     -- Python code formatter
     use {
         "psf/black",
-        config = require("plugin_config.black"),
         ft = { "python" },
     }
 

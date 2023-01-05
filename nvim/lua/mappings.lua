@@ -11,22 +11,18 @@ map("n", "<leader>p", "\"+p")
 map("v", "<leader>p", "\"+p")
 
 -- Buffer manipulation
-map("n", "<leader>T", ":enew<CR>")
-map("n", "<leader>bq", ":bp <BAR> bd #<CR>")
-
--- Change buffer width
-map("n", "<leader>+", ":vertical resize +1<CR>")
-map("n", "<leader>-", ":vertical resize -1<CR>")
+map("n", "<leader>T", "<Cmd>enew<CR>")
+map("n", "<leader>bq", "<Cmd>bp <BAR> bd #<CR>")
 
 -- Remove search highlight with //
-map("n", "//", ":nohlsearch<CR>")
+map("n", "//", "<Cmd>nohlsearch<CR>")
 
 -- Switch to alternate file.
 map("n", "<leader><leader>", "<C-^>")
 
 -- Splits
-map("n", "ss", ":split<CR><C-W>j")
-map("n", "vv", ":vsplit<CR><C-W>l")
+map("n", "ss", "<Cmd>split<CR><C-W>j")
+map("n", "vv", "<Cmd>vsplit<CR><C-W>l")
 
 -- Exit insert mode
 map("i", "kj", "<ESC>")
@@ -50,8 +46,24 @@ map("n", "<Space>", "za")
 -- Replace selection
 map("v", "<C-r>", "\"hy:%s/<C-r>h//gc<left><left><left>")
 
+-- Move selection
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor in middle when searching keyword
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+
+-- Delete to the void register
+map("n", "<leader>d", "\"_d")
+map("v", "<leader>d", "\"_d")
+
+-- TODO: Find key to map this on
+-- Paste over selection and don't copy
+-- map("x", "<leader>p", "\"_dP")
+
 -- CodeActionMenu
-map("n", "<leader>ac", ":CodeActionMenu<CR>")
+map("n", "<leader>ac", "<Cmd>CodeActionMenu<CR>")
 
 vim.api.nvim_create_user_command("W", "w", {})
 

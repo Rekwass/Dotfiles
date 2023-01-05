@@ -4,6 +4,6 @@ return function()
 
     require("hop").setup()
 
-    map("n", "<leader>J", ":HopWord<CR>")
+    map("n", "<leader>J", "<Cmd>HopWord<CR>")
 
 end
