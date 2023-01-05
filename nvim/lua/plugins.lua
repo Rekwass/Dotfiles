@@ -160,6 +160,15 @@ return require("packer").startup(function(use)
         config = require("plugin_config.telescope"),
     }
 
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        tag = 'nightly', -- optional, updated every week. (see issue #1193)
+        config = require("plugin_config.nvim-tree")
+    }
+
     -- Todo Comments
     use {
         "folke/todo-comments.nvim",
