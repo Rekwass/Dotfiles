@@ -37,6 +37,11 @@ set backupdir=/tmp/backup/
 
 let g:instant_username = "Nicolas"
 
+" In order for Lua Tree to work properly
+
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 " Create those directories if needed
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), "p")

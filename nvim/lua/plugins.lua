@@ -20,9 +20,6 @@ return require("packer").startup(function(use)
     -- Package manager
     use { "wbthomason/packer.nvim" }
 
-    -- Cache lua modules and load fast
-    use 'lewis6991/impatient.nvim'
-
     -- Color theme
     use {
         "EdenEast/nightfox.nvim",
@@ -158,6 +155,15 @@ return require("packer").startup(function(use)
                 run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" },
         },
         config = require("plugin_config.telescope"),
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        tag = 'nightly', -- optional, updated every week. (see issue #1193)
+        config = require("plugin_config.nvim-tree")
     }
 
     -- Todo Comments

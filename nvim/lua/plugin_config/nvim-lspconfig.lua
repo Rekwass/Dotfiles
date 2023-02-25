@@ -1,5 +1,4 @@
 return function()
-
     local lsp = require("lspconfig")
 
     local utils = require("utils")
@@ -91,7 +90,7 @@ return function()
         })
     }
 
-    lsp["sumneko_lua"].setup {
+    lsp["lua_ls"].setup {
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
@@ -116,14 +115,94 @@ return function()
         analyze_open_documents_only = false,
     }
 
+    lsp["tsserver"].setup {
+        on_attach = function(client, bufnr)
+            local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
+
+            vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+            if client.supports_method "textDocument/declaration" then
+                buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
+            end
+
+            if client.supports_method "textDocument/definition" then
+                buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
+            end
+
+            if client.supports_method "textDocument/implementation" then
+                buf_set_keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+            end
+
+            if client.supports_method "textDocument/references" then
+                buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>")
+            end
+
+            if client.supports_method "textDocument/hover" then
+                buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+            end
+
+            if client.supports_method "textDocument/codeAction" then
+                buf_set_keymap("n", "<leader>qf", "<Cmd>lua vim.lsp.buf.code_action({apply = true})<CR>")
+            end
+
+            if client.supports_method "textDocument/rename" then
+                buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+            end
+        end,
+        capabilities = capabilities,
+    }
+
+    lsp["eslint"].setup {
+        on_attach = function(client, bufnr)
+            local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
+
+            vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+            if client.supports_method "textDocument/declaration" then
+                buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
+            end
+
+            if client.supports_method "textDocument/definition" then
+                buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
+            end
+
+            if client.supports_method "textDocument/implementation" then
+                buf_set_keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+            end
+
+            if client.supports_method "textDocument/references" then
+                buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>")
+            end
+
+            if client.supports_method "textDocument/hover" then
+                buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+            end
+
+            if client.supports_method "textDocument/codeAction" then
+                buf_set_keymap("n", "<leader>qf", "<Cmd>lua vim.lsp.buf.code_action({apply = true})<CR>")
+            end
+
+            if client.supports_method "textDocument/rename" then
+                buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+            end
+
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                command = "EslintFixAll",
+            })
+        end,
+        capabilities = capabilities,
+    }
+
     local servers = {
-        { name = "clangd" },
-        { name = "rust_analyzer" },
-        { name = "yamlls" },
-        { name = "cmake" },
         { name = "bashls" },
+        { name = "clangd" },
+        { name = "cmake" },
+        { name = "dockerls" },
         { name = "hls" },
+        { name = "rust_analyzer" },
         { name = "vimls" },
+        { name = "yamlls" },
     }
 
     for _, server in ipairs(servers) do
@@ -132,5 +211,4 @@ return function()
             capabilities = capabilities,
         }
     end
-
 end
