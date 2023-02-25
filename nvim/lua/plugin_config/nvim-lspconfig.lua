@@ -195,14 +195,14 @@ return function()
     }
 
     local servers = {
-        { name = "clangd" },
-        { name = "rust_analyzer" },
-        { name = "yamlls" },
-        { name = "cmake" },
         { name = "bashls" },
-        { name = "hls" },
-        { name = "vimls" },
+        { name = "clangd" },
+        { name = "cmake" },
         { name = "dockerls" },
+        { name = "hls" },
+        { name = "rust_analyzer" },
+        { name = "vimls" },
+        { name = "yamlls" },
     }
 
     for _, server in ipairs(servers) do

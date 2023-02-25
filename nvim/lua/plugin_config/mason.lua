@@ -6,11 +6,13 @@ return function()
             "clangd",
             "cmake",
             "dockerls",
+            "eslint",
             "omnisharp",
             "hls",
             "lua_ls",
             "pyright",
             "rust_analyzer",
+            "tsserver",
             "vimls",
             "yamlls"
         },
