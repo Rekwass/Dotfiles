@@ -1,14 +1,14 @@
 return function()
-
     require("mason").setup()
     require("mason-lspconfig").setup({
         ensure_installed = {
             "bashls",
             "clangd",
             "cmake",
+            "dockerls",
             "omnisharp",
             "hls",
-            "sumneko_lua",
+            "lua_ls",
             "pyright",
             "rust_analyzer",
             "vimls",
@@ -16,5 +16,4 @@ return function()
         },
         automatic_installation = true,
     })
-
 end
