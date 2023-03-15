@@ -116,18 +116,29 @@ return function()
                         ["<CR>"] = custom_actions.multi_selection_open,
                 },
             },
+            vimgrep_arguments = {
+                'rg',
+                '--color=never',
+                '--no-heading',
+                '--with-filename',
+                '--line-number',
+                '--column',
+                '--smart-case'
+            },
         },
         pickers = {
             find_files = {
                 follow = true,
             },
+            hidden = true,
         },
     })
 
     telescope.load_extension("fzf")
 
-    map("n", "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files({hidden=true})<CR>")
-    map("n", "<leader>fg", "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>")
+    map("n", "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files()<CR>")
+    map("n", "<leader>fg",
+        "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>")
     map("n", "<leader>fb", "<Cmd>lua require(\"telescope.builtin\").buffers()<CR>")
     map("n", "<leader>fh", "<Cmd>lua require(\"telescope.builtin\").help_tags()<CR>")
 end
