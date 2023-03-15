@@ -1,5 +1,4 @@
 return function()
-
     local map = require("utils").map
 
     local telescope = require("telescope")
@@ -110,11 +109,11 @@ return function()
             },
             mappings = {
                 i = {
-                    ["<Esc>"] = actions.close,
-                    ["<CR>"] = stopinsert(custom_actions.multi_selection_open),
+                        ["<Esc>"] = actions.close,
+                        ["<CR>"] = stopinsert(custom_actions.multi_selection_open),
                 },
                 n = {
-                    ["<CR>"] = custom_actions.multi_selection_open,
+                        ["<CR>"] = custom_actions.multi_selection_open,
                 },
             },
         },
@@ -131,5 +130,4 @@ return function()
     map("n", "<leader>fg", "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>")
     map("n", "<leader>fb", "<Cmd>lua require(\"telescope.builtin\").buffers()<CR>")
     map("n", "<leader>fh", "<Cmd>lua require(\"telescope.builtin\").help_tags()<CR>")
-
 end

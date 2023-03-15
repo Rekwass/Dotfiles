@@ -63,8 +63,8 @@ return {
     }),
     s({ trig = "out", dscr = "'str::cout' snippet" }, {
         t("std::cout << "), i(1, "\"Message\""), t(" << "), c(2, {
-            t("std::endl"),
-            t("\"\\n\"")
-        }), t(";")
+        t("std::endl"),
+        t("\"\\n\"")
+    }), t(";")
     })
 }

@@ -1,5 +1,4 @@
 return function()
-
     -- require "alpha".setup(require "alpha.themes.startify".config)
 
     local alpha = require("alpha")
@@ -71,5 +70,4 @@ return function()
         group = vim.api.nvim_create_augroup("alpha_nvim", { clear = true }),
         command = "setlocal nofoldenable",
     })
-
 end

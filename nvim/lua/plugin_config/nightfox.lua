@@ -1,5 +1,4 @@
 return function()
-
     require('nightfox').setup({
         options = {
             styles = {
@@ -11,5 +10,4 @@ return function()
     })
 
     vim.cmd("colorscheme nightfox")
-
 end

@@ -1,5 +1,4 @@
 return function()
-
     local map = require("utils").map
 
     require("bufferline").setup({
@@ -24,5 +23,4 @@ return function()
     -- Buffer reordering
     map("n", "<leader>h", "<Cmd>BufferLineMovePrev<CR>")
     map("n", "<leader>k", "<Cmd>BufferLineMoveNext<CR>")
-
 end

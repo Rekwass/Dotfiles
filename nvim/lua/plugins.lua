@@ -16,7 +16,6 @@ vim.cmd([[
 ]])
 
 return require("packer").startup(function(use)
-
     -- Package manager
     use { "wbthomason/packer.nvim" }
 
@@ -151,8 +150,11 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         requires = {
             { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope-fzf-native.nvim",
-                run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" },
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                run =
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+            },
         },
         config = require("plugin_config.telescope"),
     }
