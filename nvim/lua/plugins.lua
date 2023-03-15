@@ -31,6 +31,10 @@ return require("packer").startup(function(use)
         config = require("plugin_config.mason"),
     }
     use { "williamboman/mason-lspconfig.nvim" }
+    use {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        config = require("plugin_config.mason-tool-installer"),
+    }
 
     -- Enhanced colors and highlighting
     use {
