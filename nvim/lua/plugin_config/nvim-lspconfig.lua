@@ -58,12 +58,12 @@ return function()
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
         vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        update_in_insert = false,
-        virtual_text = {
-            prefix = ""
-        },
-    }
+            underline = true,
+            update_in_insert = false,
+            virtual_text = {
+                prefix = ""
+            },
+        }
     )
 
     -- vim.lsp.handlers["textDocument/codeAction"] = require"lsputil.codeAction".code_action_handler
@@ -200,6 +200,7 @@ return function()
         { name = "cmake" },
         { name = "dockerls" },
         { name = "hls" },
+        { name = "html" },
         { name = "rust_analyzer" },
         { name = "vimls" },
         { name = "yamlls" },
