@@ -43,6 +43,12 @@ return require("packer").startup(function(use)
         config = require("plugin_config.nvim-treesitter"),
     }
 
+    -- Highlight hovered word
+    use {
+        "RRethy/vim-illuminate",
+        config = require("plugin_config.vim-illuminate")
+    }
+
     -- Buffers on top of the screen
     use {
         "akinsho/bufferline.nvim",
