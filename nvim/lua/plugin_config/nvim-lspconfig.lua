@@ -150,6 +150,8 @@ return function()
             end
         end,
         capabilities = capabilities,
+        vim.api.nvim_buf_set_option(0, "tabstop", 2),
+        vim.api.nvim_buf_set_option(0, "shiftwidth", 2),
     }
 
     lsp["eslint"].setup {
@@ -194,13 +196,19 @@ return function()
         capabilities = capabilities,
     }
 
+    lsp["html"].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        vim.api.nvim_buf_set_option(0, "tabstop", 2),
+        vim.api.nvim_buf_set_option(0, "shiftwidth", 2),
+    }
+
     local servers = {
         { name = "bashls" },
         { name = "clangd" },
         { name = "cmake" },
         { name = "dockerls" },
         { name = "hls" },
-        { name = "html" },
         { name = "rust_analyzer" },
         { name = "vimls" },
         { name = "yamlls" },
