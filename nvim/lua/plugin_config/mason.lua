@@ -9,7 +9,7 @@ return function()
             "eslint",
             "omnisharp",
             "hls",
-            "lua_ls",
+            "lua-language-server",
             "pyright",
             "rust_analyzer",
             "tsserver",
