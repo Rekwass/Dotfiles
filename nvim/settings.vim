@@ -25,8 +25,8 @@ set expandtab               " Insert spaces instead of tabs
 set smartindent             " Automatically indents on patterns (e.g.: {, })
 set noautochdir             " Stop changing my directory >:C
 set mouse=                  " Disables mouse because why would you need your mouse when using nvim ?
-set shellcmdflag=-ic 	    " Allows vim to find the aliases from my .zshrc
 
+set ignorecase              " Make command completion case insensitive
 
 " Backup, undo and swapfiles
 set backup

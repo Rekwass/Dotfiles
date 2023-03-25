@@ -1,5 +1,4 @@
 return function()
-
     vim.g.strip_whitespace_on_save = 1
 
     -- Go to browser when opening a .md
@@ -15,5 +14,4 @@ return function()
     vim.g.mkdp_page_title = "「${name}」"
 
     vim.g.mkdp_filetypes = { "markdown" }
-
 end

@@ -1,5 +1,4 @@
 return function()
-
     local map = require("utils").map
 
     local telescope = require("telescope")
@@ -110,26 +109,36 @@ return function()
             },
             mappings = {
                 i = {
-                    ["<Esc>"] = actions.close,
-                    ["<CR>"] = stopinsert(custom_actions.multi_selection_open),
+                        ["<Esc>"] = actions.close,
+                        ["<CR>"] = stopinsert(custom_actions.multi_selection_open),
                 },
                 n = {
-                    ["<CR>"] = custom_actions.multi_selection_open,
+                        ["<CR>"] = custom_actions.multi_selection_open,
                 },
+            },
+            vimgrep_arguments = {
+                'rg',
+                '--color=never',
+                '--no-heading',
+                '--with-filename',
+                '--line-number',
+                '--column',
+                '--smart-case'
             },
         },
         pickers = {
             find_files = {
                 follow = true,
             },
+            hidden = true,
         },
     })
 
     telescope.load_extension("fzf")
 
-    map("n", "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files({hidden=true})<CR>")
-    map("n", "<leader>fg", "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>")
+    map("n", "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files()<CR>")
+    map("n", "<leader>fg",
+        "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>")
     map("n", "<leader>fb", "<Cmd>lua require(\"telescope.builtin\").buffers()<CR>")
     map("n", "<leader>fh", "<Cmd>lua require(\"telescope.builtin\").help_tags()<CR>")
-
 end
