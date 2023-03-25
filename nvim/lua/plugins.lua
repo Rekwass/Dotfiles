@@ -16,6 +16,8 @@ require("lazy").setup({
     -- Color theme
     {
         "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
         config = require("plugin_config.nightfox"),
     },
 
@@ -103,6 +105,8 @@ require("lazy").setup({
     -- Greeter
     {
         "goolord/alpha-nvim",
+        lazy = false,
+        priority = 100,
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = require("plugin_config.alpha"),
     },
