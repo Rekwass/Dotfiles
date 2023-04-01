@@ -11,6 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.g.mapleader = ","
+
 require("lazy").setup({
 
     -- Color theme
@@ -111,6 +113,12 @@ require("lazy").setup({
         config = require("plugin_config.alpha"),
     },
 
+    -- Which Key
+    {
+        "folke/which-key.nvim",
+        config = require("plugin_config.which_key"),
+    },
+
     -- Autopairs
     {
         "windwp/nvim-autopairs",
@@ -122,6 +130,12 @@ require("lazy").setup({
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = require("plugin_config.trouble"),
+    },
+
+    -- Nvim notifications
+    {
+        "rcarriga/nvim-notify",
+        config = require("plugin_config.nvim-notify"),
     },
 
     -- Git modification (on the left)
@@ -191,4 +205,10 @@ require("lazy").setup({
         init = require("plugin_config.markdown-preview"),
         ft = { "markdown" },
     },
-})
+
+}, {
+    install = {
+        colorscheme = { "nightfox" },
+    },
+}
+)

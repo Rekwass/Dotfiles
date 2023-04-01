@@ -1,7 +1,5 @@
 local map = require("utils").map
 
-vim.g.mapleader = ","
-
 -- Copy to clipboard
 map("n", "<leader>y", "\"+yy")
 map("v", "<leader>y", "\"+y")
