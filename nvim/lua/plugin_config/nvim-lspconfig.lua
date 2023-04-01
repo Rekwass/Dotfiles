@@ -203,8 +203,17 @@ return function()
         vim.api.nvim_buf_set_option(0, "shiftwidth", 2),
     }
 
+    lsp["phpactor"].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        root_dir = function()
+            return vim.loop.cwd()
+        end,
+    }
+
     local servers = {
         { name = "bashls" },
+        { name = "cssls" },
         { name = "clangd" },
         { name = "cmake" },
         { name = "dockerls" },
