@@ -152,6 +152,9 @@
 # Reload yabai config
 ctrl + alt + cmd - r : yabai --restart-service"
 
+# Toggle workspace layout (bsp / float)
+shift + alt - space : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+
 # Focus window in direction of focused window
 # (options: north, east, south, west)
 shift + alt - h : yabai -m window --focus west
@@ -165,6 +168,11 @@ ctrl + shift + alt - h : yabai -m window --swap west
 ctrl + shift + alt - j : yabai -m window --swap south
 ctrl + shift + alt - k : yabai -m window --swap north
 ctrl + shift + alt - l : yabai -m window --swap east
+
+# Move window previous or next workspace
+# (options: prev, next)
+shift + alt + cmd - h : yabai -m window --space prev
+shift + alt + cmd - l : yabai -m window --space next
 
 # Cycles window position and size with window clockwise and counter clockwise
 ctrl + shift + alt - i : ~/.config/skhd/custom_commands/cycle_clockwise.sh
