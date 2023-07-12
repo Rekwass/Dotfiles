@@ -51,10 +51,10 @@ return function()
             end,
         },
         mapping = {
-                ["<CR>"] = cmp.mapping.confirm { select = true },
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<Esc>"] = cmp.mapping.abort(),
-                ["<Tab>"] = cmp.mapping(function(fallback)
+            ["<CR>"] = cmp.mapping.confirm { select = true },
+            ["<C-Space>"] = cmp.mapping.complete(),
+            ["<Esc>"] = cmp.mapping.abort(),
+            ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
                 elseif luasnip.expand_or_jumpable() then
@@ -65,7 +65,7 @@ return function()
                     fallback()
                 end
             end, { "i", "s" }),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
+            ["<S-Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_prev_item()
                 elseif luasnip.jumpable(-1) then
@@ -77,16 +77,22 @@ return function()
         },
         formatting = {
             format = function(entry, vim_item)
-                vim_item.kind = string.format("%s(%s)", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                if vim_item.kind == "TabNine" then
+                    vim_item.kind = string.format("%s", entry.completion_item.data.completion_metadata.detail)
+                elseif kind_icons[vim_item.kind] ~= nil then
+                    vim_item.kind = string.format("%s(%s)", kind_icons[vim_item.kind], vim_item.kind)
+                else
+                    vim_item.kind = string.format("(%s)", vim_item.kind)
+                end
 
                 vim_item.menu = ({
-                        buffer = "[Buffer]",
-                        nvim_lsp = "[LSP]",
-                        cmp_tabnine = "[Tabnine]",
-                        luasnip = "[LuaSnip]",
-                        nvim_lua = "[Lua]",
-                        latex_symbols = "[LaTeX]",
-                    })[entry.source.name]
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    cmp_tabnine = "[Tabnine]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lua = "[Lua]",
+                    latex_symbols = "[LaTeX]",
+                })[entry.source.name]
 
                 local label = vim_item.abbr
                 local truncated_label = vim.fn.strcharpart(label, 0, MAX_LABEL_WIDTH)
