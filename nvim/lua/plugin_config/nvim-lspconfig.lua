@@ -102,18 +102,18 @@ return function()
         }
     }
 
-    lsp["omnisharp"].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
-        enable_editorconfig_support = true,
-        enable_ms_build_load_projects_on_demand = false,
-        enable_roslyn_analyzers = false,
-        organize_imports_on_format = false,
-        enable_import_completion = false,
-        sdk_include_prereleases = true,
-        analyze_open_documents_only = false,
-    }
+    -- lsp["omnisharp"].setup {
+    --     on_attach = on_attach,
+    --     capabilities = capabilities,
+    --     cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+    --     enable_editorconfig_support = true,
+    --     enable_ms_build_load_projects_on_demand = false,
+    --     enable_roslyn_analyzers = false,
+    --     organize_imports_on_format = false,
+    --     enable_import_completion = false,
+    --     sdk_include_prereleases = true,
+    --     analyze_open_documents_only = false,
+    -- }
 
     lsp["tsserver"].setup {
         on_attach = function(client, bufnr)
@@ -196,6 +196,42 @@ return function()
         capabilities = capabilities,
     }
 
+    lsp["hls"].setup {
+        on_attach = function(client, bufnr)
+            local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
+
+            vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+            if client.supports_method "textDocument/declaration" then
+                buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
+            end
+
+            if client.supports_method "textDocument/definition" then
+                buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
+            end
+
+            if client.supports_method "textDocument/implementation" then
+                buf_set_keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>")
+            end
+
+            if client.supports_method "textDocument/references" then
+                buf_set_keymap("n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>")
+            end
+
+            if client.supports_method "textDocument/hover" then
+                buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
+            end
+
+            if client.supports_method "textDocument/codeAction" then
+                buf_set_keymap("n", "<leader>qf", "<Cmd>lua vim.lsp.buf.code_action({apply = true})<CR>")
+            end
+
+            if client.supports_method "textDocument/rename" then
+                buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
+            end
+        end
+    }
+
     lsp["html"].setup {
         on_attach = on_attach,
         capabilities = capabilities,
@@ -217,7 +253,6 @@ return function()
         { name = "clangd" },
         { name = "cmake" },
         { name = "dockerls" },
-        { name = "hls" },
         { name = "rust_analyzer" },
         { name = "vimls" },
         { name = "yamlls" },
