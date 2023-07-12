@@ -1,6 +1,16 @@
 return function()
     local map = require("utils").map
 
+    local ls = require("luasnip")
+    local types = require("luasnip.util.types")
+
+    ls.setup({
+        history = true,
+        update_events = "TextChanged,TextChangedI",
+        delete_check_events = "TextChanged",
+        ext_base_prio = 200,
+    })
+
     require("luasnip.loaders.from_lua").load({ paths = "./snippets" })
 
     function leave_snippet()
