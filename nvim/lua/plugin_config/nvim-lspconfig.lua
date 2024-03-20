@@ -229,7 +229,8 @@ return function()
             if client.supports_method "textDocument/rename" then
                 buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
             end
-        end
+        end,
+        capabilities = capabilities
     }
 
     lsp["html"].setup {
