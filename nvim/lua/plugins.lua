@@ -140,10 +140,10 @@ require("lazy").setup({
     },
 
     -- Nvim notifications
-    {
-        "rcarriga/nvim-notify",
-        config = require("plugin_config.nvim-notify"),
-    },
+    -- {
+    --     "rcarriga/nvim-notify",
+    --     config = require("plugin_config.nvim-notify"),
+    -- },
 
     -- Git modification (on the left)
     {
