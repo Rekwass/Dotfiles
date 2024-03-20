@@ -6,3 +6,4 @@ Microsoft\\VisualStudio\ Services
 xbuild/
 simple-update-notifier/
 chezmoistate.boltdb
+NuGet/
