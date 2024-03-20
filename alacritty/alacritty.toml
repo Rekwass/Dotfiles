@@ -1,0 +1,27 @@
+import = [
+  "~/.config/alacritty/themes/blood_moon.toml",
+  # "~/.config/alacritty/themes/nord.toml"
+  ]
+
+# shell = { program = "/bin/zsh", args = ["-l"] }
+# [shell]
+# program = "/bin/zsh"
+# args = ["-l"]
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+# normal = { family = "SauceCodePro NF", style = "Regular" }
+
+[keyboard]
+bindings = [
+  # { key = "Comma", mods = "Command", command = { program = "nvim", args = ["~/.config/alacritty/alacritty.toml"] } },
+  { key = "Comma", mods = "Command", chars = "nvim ~/.config/alacritty/alacritty.toml\u000A" }, # Ugly workaround... the above line does not work (neither with absolute path)
+  { key = "Back", mods = "Super", chars = "\u0015" }, # was '\x15'
+  { key = "Left", mods = "Alt", chars = "\u001Bb" }, # was '\x1bb'
+  { key = "Right", mods = "Alt", chars = "\u001Bf" }, # was '\x1bf'
+  { key = "Left", mods = "Command", chars = "\u001BOH", mode = "AppCursor" }, # Home, was '\x1b0h'
+  { key = "Right", mods = "Command", chars = "\u001BOF", mode = "AppCursor" }, # End, was '\x1b0F'
+]
+
+[window]
+decorations = "none"
