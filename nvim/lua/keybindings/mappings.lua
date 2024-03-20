@@ -56,9 +56,8 @@ map("n", "N", "Nzz")
 map("n", "<leader>d", "\"_d")
 map("v", "<leader>d", "\"_d")
 
--- TODO: Find key to map this on
 -- Paste over selection and don't copy
--- map("x", "<leader>p", "\"_dP")
+map("x", "<leader>P", "\"_dP")
 
 -- CodeActionMenu
 map("n", "<leader>ac", "<Cmd>CodeActionMenu<CR>")
