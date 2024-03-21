@@ -102,18 +102,18 @@ return function()
         }
     }
 
-    -- lsp["omnisharp"].setup {
-    --     on_attach = on_attach,
-    --     capabilities = capabilities,
-    --     cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
-    --     enable_editorconfig_support = true,
-    --     enable_ms_build_load_projects_on_demand = false,
-    --     enable_roslyn_analyzers = false,
-    --     organize_imports_on_format = false,
-    --     enable_import_completion = false,
-    --     sdk_include_prereleases = true,
-    --     analyze_open_documents_only = false,
-    -- }
+    lsp["omnisharp"].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        cmd = { "dotnet", "/Users/rekwass/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+        enable_editorconfig_support = true,
+        enable_ms_build_load_projects_on_demand = false,
+        enable_roslyn_analyzers = false,
+        organize_imports_on_format = false,
+        enable_import_completion = false,
+        sdk_include_prereleases = true,
+        analyze_open_documents_only = false,
+    }
 
     lsp["tsserver"].setup {
         on_attach = function(client, bufnr)
@@ -229,7 +229,8 @@ return function()
             if client.supports_method "textDocument/rename" then
                 buf_set_keymap("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>")
             end
-        end
+        end,
+        capabilities = capabilities
     }
 
     lsp["html"].setup {
