@@ -120,6 +120,7 @@ export LANG=en_US.UTF-8
 alias v="nvim"
 alias c="clear"
 alias gf="fg"
+alias a="make drecreate"
 
 # Automatic Tests
 
