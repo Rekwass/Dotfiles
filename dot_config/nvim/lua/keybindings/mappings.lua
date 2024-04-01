@@ -32,6 +32,16 @@ map("i", "jK", "<ESC>")
 map("i", "KJ", "<ESC>")
 map("i", "JK", "<ESC>")
 
+-- Exit terminal mode
+map("t", "kj", "<C-\\><C-n>")
+map("t", "jk", "<C-\\><C-n>")
+map("t", "Kj", "<C-\\><C-n>")
+map("t", "Jk", "<C-\\><C-n>")
+map("t", "kJ", "<C-\\><C-n>")
+map("t", "jK", "<C-\\><C-n>")
+map("t", "KJ", "<C-\\><C-n>")
+map("t", "JK", "<C-\\><C-n>")
+
 -- Make navigation easier
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-h>", "<C-w>h")
