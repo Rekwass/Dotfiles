@@ -150,7 +150,11 @@ alias config="cd ~/.config/nvim/"
 alias medali="cd ~/Work/Epitech/EIP/Medali/medali-app-back"
 alias laval="cd ~/Work/Epitech/Tek4/Laval"
 alias vmerge="git diff --name-only | uniq | xargs nvim"
-alias rps=/Users/rekwass/Work/Personnal/RockPaperScissors/RockPaperScissors-exe
+alias rps="/Users/rekwass/Work/Personnal/RockPaperScissors/RockPaperScissors-exe"
+alias ugram="cd /Users/rekwass/Work/Epitech/Tek4/Laval/Work/DevWeb\ GLO-3112/ugram/api"
+alias haskell="cd /Users/rekwass/Work/Personnal/HaskellProgramming"
+alias b="cmake -S ./ -B build && cmake --build build && ./build/TP3"
+alias ff-config="cd /Users/rekwass/Library/Application\ Support/Firefox/Profiles/ucd594uq.Security/"
 
 alias trouve="grep -rn --exclude-dir=deps --exclude-dir=build"
 
@@ -198,4 +202,4 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
-
+export EDITOR=nvim
