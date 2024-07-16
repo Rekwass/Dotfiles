@@ -12,6 +12,7 @@ vim.opt.scrolloff = 1 -- Make the cursor see x lines above cursor
 vim.showbreak = "↪" -- Show line wrapping character
 vim.opt.pumheight = 15 -- Maximum number of items to show in the popup menu
 
+vim.opt.ignorecase = true -- Ignore the case when searching
 vim.opt.smartcase = true -- Use smartcase when searching
 
 vim.opt.shiftwidth = 4 -- Number of spaces for auto-indent
@@ -19,7 +20,6 @@ vim.opt.tabstop = 4 -- Number of spaces per tab
 vim.expandtab = true -- Insert spaces instead of tabs
 vim.opt.smartindent = true -- Automatically indents on patterns (e.g.: {, })
 vim.opt.mouse = "" -- Disables mouse because why would you need your mouse when using nvim ?
-vim.opt.ignorecase = true
 
 require("config.lazy")
 require("keybindings.base")
