@@ -54,10 +54,6 @@ map("n", "<Space>", "za")
 -- Replace selection
 map("v", "<C-r>", "\"hy:%s/<C-r>h//gc<left><left><left>")
 
--- Move selection
-map("v", "J", ":m '>+1<CR>gv=gv")
-map("v", "K", ":m '<-2<CR>gv=gv")
-
 -- Keep cursor in middle when searching keyword
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
