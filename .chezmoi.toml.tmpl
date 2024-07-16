@@ -4,6 +4,6 @@
     email = {{ $email | quote }}
 
 [git]
-    commitMessageTemplate = "{{ promptString \"Commit message: \" }}"
     autoCommit = true
     autoPush = true
+		commitMessageTemplate = "{{ promptString \"Commit message\" }}"
