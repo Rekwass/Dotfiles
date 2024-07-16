@@ -21,4 +21,4 @@ vim.opt.smartindent = true -- Automatically indents on patterns (e.g.: {, })
 vim.opt.mouse = "" -- Disables mouse because why would you need your mouse when using nvim ?
 vim.opt.ignorecase = true
 
-require("lua.config")
+require("config")
