@@ -103,12 +103,6 @@ require("lazy").setup({
 		config = require("plugins.nvim-cmp"),
 	},
 	"saadparwaiz1/cmp_luasnip",
-	{
-		"tzachar/cmp-tabnine",
-		build = "./install.sh",
-		dependencies = "hrsh7th/nvim-cmp",
-		config = require("plugins.cmp-tabnine"),
-	},
 
 	-- Greeter
 	{
