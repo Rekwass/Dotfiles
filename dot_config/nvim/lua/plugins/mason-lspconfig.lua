@@ -14,7 +14,7 @@ return {
             "lua_ls",
             "omnisharp",
             "pyright",
-            "tsserver",
+            "ts_ls",
             "yamlls"
         },
         automatic_installation = true,
