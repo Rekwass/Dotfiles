@@ -1,0 +1,32 @@
+{
+	"name": "my_snippets",
+  "author": "Rekwass",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/all.json"
+			},
+			{
+				"language": [
+					"c"
+				],
+				"path": "./snippets/c.json"
+			},
+			{
+				"language": [
+					"cpp"
+				],
+				"path": "./snippets/cpp.json"
+			},
+			{
+				"language": [
+					"python"
+				],
+				"path": "./snippets/python.json"
+			}
+		]
+	}
+}

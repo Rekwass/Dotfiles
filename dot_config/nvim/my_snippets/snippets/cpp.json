@@ -1,0 +1,348 @@
+{
+	"tekheader": {
+		"prefix": "tekh",
+		"body": [
+			"/*",
+      "** EPITECH PROJECT, ${CURRENT_YEAR}",
+      "** ${1:$TM_FILENAME}",
+      "** File description:",
+      "** ${2:$TM_FILENAME_BASE}",
+      "*/",
+      "",
+      "$0"
+		],
+    "description": "EPITECH header"
+	},
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:int} ${2:i} = ${3:0}; $2 < ${4:length}; ++$2) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'for' loop"
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "    $0",
+      "} while($1) {",
+      "    ",
+      "}"
+    ],
+    "description": "Code snippet for 'do...while' loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ($1)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'while' loop"
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "body": [
+      "for(${1:auto} ${2:var} : ${3:collection_to_loop})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'range-based for loop' (c++11) statement"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ($1) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'if' statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'else' statement"
+  },
+  "else if": {
+    "prefix": "elif",
+    "body": [
+      "else if ($1) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'else-if' statement"
+  },
+  "enum class": {
+    "prefix": "enumclass",
+    "body": [
+      "enum class ${1:MyEnum} {",
+      "    $0",
+      "};"
+    ],
+    "description": "Code snippet for 'enum class' (c++11)"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "/*",
+      " * ${2:description}",
+      " */",
+      "class ${1:MyClass} {",
+      "   public:",
+      "    $1() noexcept = default;",
+      "    $1($1 const& other) = default;",
+      "    $1($1&& other) noexcept = default;",
+      "",
+      "    $1& operator=($1 const& other) noexcept = default;",
+      "    $1& operator=($1&& other) noexcept = default;",
+      "    ~$1() noexcept = default;",
+      "",
+      "   private:",
+      "};"
+    ],
+    "description": "Code snippet for 'class'"
+  },
+  "function": {
+    "prefix": "fun",
+    "body": [
+      "${1:void} ${2:function}() noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function'"
+  },
+  "function1": {
+    "prefix": "fun1",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function1'"
+  },
+  "function2": {
+    "prefix": "fun2",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function2'"
+  },
+  "function3": {
+    "prefix": "fun3",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function3'"
+  },
+  "function4": {
+    "prefix": "fun4",
+    "body": [
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}, ${9:int} ${10:var4}) noexcept {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'function4'"
+  },
+  "class_function": {
+    "prefix": "cfun",
+    "body": [
+      "/*",
+      " * ${3:description}",
+      " *",
+      " * ${4:return value}",
+      " */",
+      "${1:void} ${2:function}() noexcept;"
+    ],
+    "description": "Code snippet for 'class function'"
+  },
+  "class_function1": {
+    "prefix": "cfun1",
+    "body": [
+      "/*",
+      " * ${5:description}",
+      " *",
+      " * ${6:return value}",
+      " *",
+      " * ${7:argument} -> ${8:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 1'"
+  },
+  "class_function2": {
+    "prefix": "cfun2",
+    "body": [
+      "/*",
+      " * ${7:description}",
+      " *",
+      " * ${8:return value}",
+      " *",
+      " * ${9:argument1} -> ${10:description}",
+      " *",
+      " * ${11:argument2} -> ${12:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 2'"
+  },
+  "class_function3": {
+    "prefix": "cfun3",
+    "body": [
+      "/*",
+      " * ${7:description}",
+      " *",
+      " * ${8:return value}",
+      " *",
+      " * ${9:argument1} -> ${10:description}",
+      " *",
+      " * ${11:argument2} -> ${12:description}",
+      " *",
+      " * ${13:argument3} -> ${14:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 3'"
+  },
+  "class_function4": {
+    "prefix": "cfun4",
+    "body": [
+      "/*",
+      " * ${7:description}",
+      " *",
+      " * ${8:return value}",
+      " *",
+      " * ${9:argument1} -> ${10:description}",
+      " *",
+      " * ${11:argument2} -> ${12:description}",
+      " *",
+      " * ${13:argument3} -> ${14:description}",
+      " *",
+      " * ${15:argument4} -> ${16:description}",
+      " */",
+      "${1:void} ${2:function}(${3:int} ${4:var1}, ${5:int} ${6:var2}, ${7:int} ${8:var3}, ${9:int} ${10:var4}) noexcept;"
+    ],
+    "description": "Code snippet for 'class function 4'"
+  },
+  "eclass": {
+    "prefix": "eclass",
+    "body": [
+      "/*",
+      " * ${2:description}",
+      " */",
+      "class ${1:MyClass} {",
+      "   public:",
+      "    $3",
+      "   private:",
+      "    $4",
+      "};"
+    ],
+    "description": "Code snippet for 'empty class'"
+  },
+  "namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1:MyNamespace} {",
+      "$0",
+      "} // namespace $1"
+    ],
+    "description": "Code snippet for 'namespace'"
+  },
+  "pragma": {
+    "prefix": "pragma",
+    "body": [
+      "#pragma once",
+      "",
+      "$0"
+    ],
+    "description": "Code snippet for 'pragma once'"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:MyStruct}",
+      "{",
+      "    $0",
+      "};"
+    ],
+    "description": "Code snippet for 'struct'"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "case ${2:x}:",
+      "    $3",
+      "    break;",
+      "default:",
+      "    $0",
+      "    break;",
+      "}"
+    ],
+    "description": "Code snippet for 'switch' statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:x}:",
+      "    $0",
+      "    break;"
+    ],
+    "description": "Code snippet for 'case' in switch statement"
+  },
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "    $1",
+      "}",
+      "catch (${2:const std::exception&}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Code snippet for 'try catch'"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": [
+      "std::cout << \"${1:message}\" << std::endl;"
+    ],
+    "description": "Code snippet for 'printing to std::cout'"
+  },
+  "#inc": {
+    "prefix": "inc",
+    "body": [
+      "#include \"$1.hpp\""
+    ],
+    "description": "Code snippet for '#include \" \"'"
+  },
+  "#Inc": {
+    "prefix": "Inc",
+    "body": [
+      "#include <$1>"
+    ],
+    "description": "Code snippet for '#include < >'"
+  },
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (const int argc, const char *argv[])",
+      "{",
+      "    $1",
+      "    return 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C++ program"
+  }
+}
