@@ -8,6 +8,7 @@ return {
             "cssls",
             "dockerls",
             "eslint",
+            "hls",
             "html",
             "jsonls",
             "lua_ls",

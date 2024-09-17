@@ -93,6 +93,10 @@ require("lazy").setup({
             import = "plugins.nvim-scrollbar",
         },
         {
+            -- Haskell tools, lsp and much more
+            import = "plugins.haskell-tools"
+        },
+        {
             -- LSP
             import = "plugins.nvim-lspconfig",
         },

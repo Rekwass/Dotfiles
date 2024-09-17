@@ -12,7 +12,10 @@ local function getAllLSP()
     local lspNames = mason.get_installed_servers()
 
     for _, name in ipairs(lspNames) do
-        lsps[name] = require("plugins.lsp." .. name)
+        -- WARNING: Required to prevent configuring the lsp twice with haskell-tools.nvim
+        if name ~= "hls" then
+            lsps[name] = require("plugins.lsp." .. name)
+        end
     end
 
     return lsps
