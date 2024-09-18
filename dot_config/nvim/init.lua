@@ -30,6 +30,8 @@ vim.opt.undodir = "/tmp/nvim-undo-history" -- Specify undo directory
 
 vim.opt.updatetime = 250 -- Update time in milliseconds before writing in a swap file /!\ Time before diagnositc is displayed
 
+vim.opt.confirm = true -- Prompts when attempting to leave file with changes left to save instead of an error
+
 require("config.lazy")
 
 -- require("keybindings.hop")
