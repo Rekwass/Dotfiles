@@ -110,6 +110,10 @@ require("lazy").setup({
             import = "plugins.nvim-dap",
         },
         {
+            -- DAP User interface
+            import = "plugins.nvim-dap-ui",
+        },
+        {
             -- Haskell tools, lsp and much more
             import = "plugins.haskell-tools"
         },
