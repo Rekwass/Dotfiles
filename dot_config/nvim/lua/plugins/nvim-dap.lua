@@ -119,4 +119,11 @@ return {
         }
         dap.configurations.c = dap.configurations.cpp
     end,
+    keys = {
+        { "<leader>bp",  "<cmd>lua require(\"dap\").toggle_breakpoint()<CR>", desc = "Toggle breakpoint",           silent = true, },
+        { "<leader>bpc", "<cmd>lua require(\"dap\").clear_breakpoints()<CR>", desc = "Clear breakpoints",           silent = true, },
+        { "<leader>so",  "<cmd>lua require(\"dap\").step_over()<CR>",         desc = "Step to next instruction",    silent = true, },
+        { "<leader>dc",  "<cmd>lua require(\"dap\").continue()<CR>",          desc = "Continue to next breakpoint", silent = true, },
+        { "<leader>dl",  "<cmd>lua require(\"dap\").run_last()<CR>",          desc = "Continue to next breakpoint", silent = true, },
+    }
 }

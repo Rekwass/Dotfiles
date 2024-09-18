@@ -89,10 +89,4 @@ return {
 
         dapui.setup(default_config)
     end,
-    keys = {
-        { "<leader>bp", "<cmd>lua require(\"dap\").toggle_breakpoint()<CR>", desc = "Toggle breakpoint",           silent = true, },
-        { "<leader>so", "<cmd>lua require(\"dap\").step_over()<CR>",         desc = "Toggle breakpoint",           silent = true, },
-        { "<leader>dc", "<cmd>lua require(\"dap\").continue()<CR>",          desc = "Continue to next breakpoint", silent = true, },
-        { "<leader>dl", "<cmd>lua require(\"dap\").run_last()<CR>",          desc = "Continue to next breakpoint", silent = true, },
-    }
 }
