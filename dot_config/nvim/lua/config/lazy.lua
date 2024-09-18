@@ -25,6 +25,19 @@ vim.diagnostic.config({
     signs = { text = { [s.ERROR] = " ", [s.WARN] = " ", [s.INFO] = " ", [s.HINT] = "󰌵" } }
 })
 
+-- Define prefix and signs for DAP
+vim.fn.sign_define('DapBreakpoint',
+    { text = '', texthl = 'DiagnosticError', linehl = 'ColorColumn', numhl = 'ColorColumn' })
+vim.fn.sign_define('DapBreakpointCondition',
+    { text = 'ﳁ', texthl = 'DiagnosticError', linehl = 'ColorColumn', numhl = 'ColorColumn' })
+vim.fn.sign_define('DapBreakpointRejected',
+    { text = '', texthl = 'DiagnosticError', linehl = 'ColorColumn', numhl = 'ColorColumn' })
+
+vim.fn.sign_define('DapLogPoint',
+    { text = '', texthl = 'DiagnosticInfo', linehl = 'ColorColumn', numhl = 'ColorColumn' })
+vim.fn.sign_define('DapStopped',
+    { text = '', texthl = 'DiagnosticOk', linehl = 'DiagnosticVirtualTextOk', numhl = 'DiagnosticVirtualTextOk' })
+
 vim.b.disable_autoformat = false
 vim.g.disable_autoformat = false
 
@@ -91,6 +104,10 @@ require("lazy").setup({
             -- WARNING: Heavy lags coming from this plugin on files > 500 lines
             -- Scrollbar on the right of the screen
             import = "plugins.nvim-scrollbar",
+        },
+        {
+            -- DAP
+            import = "plugins.nvim-dap",
         },
         {
             -- Haskell tools, lsp and much more
