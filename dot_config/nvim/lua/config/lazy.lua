@@ -176,6 +176,10 @@ require("lazy").setup({
             -- Markdown preview
             import = "plugins.peek"
         },
+        {
+            -- Hlsearch Lens (better `n` and `N` search)
+            import = "plugins.nvim-hlslens"
+        },
     },
     -- Colorscheme that will be used when installing plugins.
     install = { colorscheme = { "nightfox" } },
