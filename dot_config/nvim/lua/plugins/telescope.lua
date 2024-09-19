@@ -41,7 +41,6 @@ return {
                         ["<CR>"] = select_one_or_multi,
                     },
                 },
-
             },
             pickers = {
                 find_files = {

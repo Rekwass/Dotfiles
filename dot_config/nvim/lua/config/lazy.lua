@@ -63,7 +63,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 require("lazy").setup({
-
     change_detection = {
         -- automatically check for config file changes and reload the ui
         enabled = false,
@@ -180,6 +179,9 @@ require("lazy").setup({
             -- Hlsearch Lens (better `n` and `N` search)
             import = "plugins.nvim-hlslens"
         },
+    },
+    ui = {
+        border = "rounded",
     },
     -- Colorscheme that will be used when installing plugins.
     install = { colorscheme = { "nightfox" } },
