@@ -75,11 +75,6 @@ require("lazy").setup({
             -- import = "plugins.tokyonight",
         },
         {
-            import = "plugins.nvim-notify",
-            enabled = false,
-            -- Nvim notifications
-        },
-        {
             -- Portable package manager (LSP, DAP, Linters, ...)
             import = "plugins.mason",
         },
