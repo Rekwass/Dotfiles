@@ -13,8 +13,8 @@ map("n", "<leader>T", "<Cmd>enew<CR>")
 map("n", "<leader>bq", "<Cmd>bp <BAR> bd #<CR>")
 map("n", "<leader>baq", "<Cmd>bufdo bd<CR>")
 
--- Remove search highlight with //
-map("n", "//", "<Cmd>nohlsearch<CR>")
+-- Really remove search highlight
+map("n", "//", "<Cmd>let @/ = \"\"<CR>")
 
 -- Switch to alternate file.
 map("n", "<leader><leader>", "<C-^>")
