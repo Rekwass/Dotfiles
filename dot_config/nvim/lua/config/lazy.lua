@@ -68,113 +68,114 @@ require("lazy").setup({
         enabled = false,
         notify = false, -- get a notification when changes are found
     },
-    spec = {
-        {
-            -- Color theme
-            import = "plugins.nightfox",
-            -- import = "plugins.tokyonight",
-        },
-        {
-            -- Portable package manager (LSP, DAP, Linters, ...)
-            import = "plugins.mason",
-        },
-        {
-            -- Package manager lspconfig
-            import = "plugins.mason-lspconfig",
-        },
-        {
-            -- Enhanced colors and highlighting
-            import = "plugins.nvim-treesitter",
-        },
-        {
-            -- Buffers on top of the screen
-            import = "plugins.bufferline",
-        },
-        {
-            -- Line on the bottom of the screen
-            import = "plugins.lualine",
-        },
-        {
-            -- WARNING: Heavy lags coming from this plugin on files > 500 lines
-            -- Scrollbar on the right of the screen
-            import = "plugins.nvim-scrollbar",
-        },
-        {
-            -- DAP
-            import = "plugins.nvim-dap",
-        },
-        {
-            -- DAP User interface
-            import = "plugins.nvim-dap-ui",
-        },
-        {
-            -- Haskell tools, lsp and much more
-            import = "plugins.haskell-tools"
-        },
-        {
-            -- LSP
-            import = "plugins.nvim-lspconfig",
-        },
-        {
-            -- Completion menu
-            import = "plugins.nvim-cmp",
-        },
-        {
-            -- Snippets
-            import = "plugins.luasnip",
-        },
-        {
-            -- Formatter
-            import = "plugins.conform",
-        },
-        {
-            -- TREE
-            import = "plugins.neo-tree",
-        },
-        {
-            -- Telescope
-            import = "plugins.telescope",
-        },
-        {
-            -- Actions preview
-            import = "plugins.actions-preview",
-        },
-        {
-            import = "plugins.dashboard-nvim",
-        },
-        {
-            --     -- Which Key
-            import = "plugins.which_key",
-        },
-        {
-            -- Autopairs
-            import = "plugins.nvim-autopairs",
-        },
-        {
-            -- Git modification (on the left)
-            import = "plugins.gitsigns"
-        },
-        {
-            -- Move around
-            import = "plugins.hop"
-        },
-        {
-            -- Comments lines
-            import = "plugins.comment"
-        },
-        {
-            -- Todo Comments
-            import = "plugins.todo-comments"
-        },
-        {
-            -- Markdown preview
-            import = "plugins.peek"
-        },
-        {
-            -- Hlsearch Lens (better `n` and `N` search)
-            import = "plugins.nvim-hlslens"
-        },
-    },
+    spec = { { import = "plugins" } },
+    -- spec = {
+    --     {
+    --         -- Color theme
+    --         import = "plugins.nightfox",
+    --         -- import = "plugins.tokyonight",
+    --     },
+    --     {
+    --         -- Portable package manager (LSP, DAP, Linters, ...)
+    --         import = "plugins.mason",
+    --     },
+    --     {
+    --         -- Package manager lspconfig
+    --         import = "plugins.mason-lspconfig",
+    --     },
+    --     {
+    --         -- Enhanced colors and highlighting
+    --         import = "plugins.nvim-treesitter",
+    --     },
+    --     {
+    --         -- Buffers on top of the screen
+    --         import = "plugins.bufferline",
+    --     },
+    --     {
+    --         -- Line on the bottom of the screen
+    --         import = "plugins.lualine",
+    --     },
+    --     {
+    --         -- WARNING: Heavy lags coming from this plugin on files > 500 lines
+    --         -- Scrollbar on the right of the screen
+    --         import = "plugins.nvim-scrollbar",
+    --     },
+    --     {
+    --         -- DAP
+    --         import = "plugins.nvim-dap",
+    --     },
+    --     {
+    --         -- DAP User interface
+    --         import = "plugins.nvim-dap-ui",
+    --     },
+    --     {
+    --         -- Haskell tools, lsp and much more
+    --         import = "plugins.haskell-tools"
+    --     },
+    --     {
+    --         -- LSP
+    --         import = "plugins.nvim-lspconfig",
+    --     },
+    --     {
+    --         -- Completion menu
+    --         import = "plugins.nvim-cmp",
+    --     },
+    --     {
+    --         -- Snippets
+    --         import = "plugins.luasnip",
+    --     },
+    --     {
+    --         -- Formatter
+    --         import = "plugins.conform",
+    --     },
+    --     {
+    --         -- TREE
+    --         import = "plugins.neo-tree",
+    --     },
+    --     {
+    --         -- Telescope
+    --         import = "plugins.telescope",
+    --     },
+    --     {
+    --         -- Actions preview
+    --         import = "plugins.actions-preview",
+    --     },
+    --     {
+    --         import = "plugins.dashboard-nvim",
+    --     },
+    --     {
+    --         --     -- Which Key
+    --         import = "plugins.which_key",
+    --     },
+    --     {
+    --         -- Autopairs
+    --         import = "plugins.nvim-autopairs",
+    --     },
+    --     {
+    --         -- Git modification (on the left)
+    --         import = "plugins.gitsigns"
+    --     },
+    --     {
+    --         -- Move around
+    --         import = "plugins.hop"
+    --     },
+    --     {
+    --         -- Comments lines
+    --         import = "plugins.comment"
+    --     },
+    --     {
+    --         -- Todo Comments
+    --         import = "plugins.todo-comments"
+    --     },
+    --     {
+    --         -- Markdown preview
+    --         import = "plugins.peek"
+    --     },
+    --     {
+    --         -- Hlsearch Lens (better `n` and `N` search)
+    --         import = "plugins.nvim-hlslens"
+    --     },
+    -- },
     ui = {
         border = "rounded",
     },
