@@ -14,7 +14,7 @@ map("n", "<leader>bq", "<Cmd>bp <BAR> bd #<CR>")
 map("n", "<leader>baq", "<Cmd>bufdo bd<CR>")
 
 -- Really remove search highlight
-map("n", "//", "<Cmd>let @/ = \"\"<CR>")
+map("n", "//", "<Cmd>nohl<CR>")
 
 -- Switch to alternate file.
 map("n", "<leader><leader>", "<C-^>")
