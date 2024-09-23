@@ -29,7 +29,7 @@ return {
     opts = {
         -- Define your formatters
         formatters_by_ft = {
-            python = { "autopep8" },
+            python = { "isort", "autopep8" },
         },
         -- Set default options
         default_format_opts = {
