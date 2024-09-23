@@ -156,6 +156,8 @@ alias haskell="cd /Users/rekwass/Work/Personnal/HaskellProgramming"
 alias b="cmake -S ./ -B build && cmake --build build && ./build/TP3"
 alias ff-config="cd /Users/rekwass/Library/Application\ Support/Firefox/Profiles/ucd594uq.Security/"
 
+alias metapolis="cd /Users/rekwass/Work/Metapolis/api/"
+
 alias trouve="grep -rn --exclude-dir=deps --exclude-dir=build"
 
 alias cmke="autobuild"
