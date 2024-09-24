@@ -34,10 +34,4 @@ vim.opt.confirm = true -- Prompts when attempting to leave file with changes lef
 
 require("config.lazy")
 
--- require("keybindings.hop")
--- require("keybindings.LuaSnip")
--- require("keybindings.nvim-tree")
--- require("keybindings.telescope")
--- require("keybindings.todo-comments")
--- require("keybindings.trouble")
 require("keybindings.base")
