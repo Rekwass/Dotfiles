@@ -7,7 +7,7 @@ return {
             python = { "flake8" },
         }
 
-        vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufEnter" }, {
+        vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufEnter", "TextChanged" }, {
             callback = function()
                 -- try_lint without arguments runs the linters defined in `linters_by_ft`
                 -- for the current filetype
