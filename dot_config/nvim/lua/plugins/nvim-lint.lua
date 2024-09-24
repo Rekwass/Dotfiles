@@ -12,7 +12,6 @@ return {
                 -- try_lint without arguments runs the linters defined in `linters_by_ft`
                 -- for the current filetype
                 lint.try_lint()
-                lint.try_lint("cspell")
             end,
         })
     end,
