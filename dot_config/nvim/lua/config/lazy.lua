@@ -22,7 +22,8 @@ vim.diagnostic.config({
     virtual_text = {
         prefix = '', -- Could be '●', '▎', 'x'
     },
-    signs = { text = { [s.ERROR] = " ", [s.WARN] = " ", [s.INFO] = " ", [s.HINT] = "󰌵" } }
+    signs = { text = { [s.ERROR] = " ", [s.WARN] = " ", [s.INFO] = " ", [s.HINT] = "󰌵" } },
+    update_in_insert = false,
 })
 
 -- Define prefix and signs for DAP
