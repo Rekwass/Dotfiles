@@ -30,6 +30,7 @@ return {
         -- Define your formatters
         formatters_by_ft = {
             python = { "isort", "autopep8" },
+            cs = { "csharpier" },
         },
         -- Set default options
         default_format_opts = {
