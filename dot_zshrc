@@ -139,7 +139,6 @@ alias setup="cp -R ~/Epitech/New/* ."
 
 # Random things
 
-alias ssh="kitty +kitten ssh"
 alias poule="git pull"
 alias nrm="norminette -t -A -i4"
 alias bbl="bubulle -ic"
