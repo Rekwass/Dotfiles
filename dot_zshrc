@@ -204,3 +204,4 @@ export PATH=/opt/homebrew/opt/llvm/bin:$PATH
 export CPATH=/opt/homebrew/include
 export LIBRARY_PATH=/opt/homebrew/lib
 export EDITOR=nvim
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet/libexec"
