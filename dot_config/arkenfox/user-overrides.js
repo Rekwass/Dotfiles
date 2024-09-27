@@ -7,9 +7,6 @@ user_pref("browser.startup.page", 3); // 0102 Set startup page to resume previou
 user_pref("browser.startup.homepage", "about:home"); // 0103 Set home and new tab open Firefox Home
 user_pref("browser.newtabpage.enabled", true); // 0104 Set newtab page
 
-// user_pref("browser.sessionstore.privacy_level", 0); // 1003 Optional to restore cookies/formdata
-
-
 user_pref("browser.contentblocking.category", "strict"); // 2701 Set content blocking to strict
 // INFO: The following preference is required to enable session restore after shutdown
 user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // 2811 Do not erase history, formdata nor download on shutdown
