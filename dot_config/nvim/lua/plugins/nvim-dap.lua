@@ -6,8 +6,7 @@ return {
         -- .NET C#
         dap.adapters.coreclr = {
             type = "executable",
-            command = require("mason-registry").get_package("netcoredbg").get_install_path("netcoredbg") ..
-                "/netcoredbg/netcoredbg",
+            command = "netcoredbg",
             args = { '--interpreter=vscode' },
         }
 
@@ -31,7 +30,7 @@ return {
 
         vim.g.dotnet_get_dll_path = function()
             local request = function()
-                return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+                return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
             end
 
             if vim.g['dotnet_last_dll_path'] == nil then
@@ -58,16 +57,6 @@ return {
                 end,
             },
         }
-        -- dap.configurations.cs = {
-        --     {
-        --         type = "coreclr",
-        --         name = "launch - netcoredbg",
-        --         request = "launch",
-        --         program = function()
-        --             return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-        --         end,
-        --     },
-        -- }
 
         -- Haskell
         dap.adapters.haskell = {
