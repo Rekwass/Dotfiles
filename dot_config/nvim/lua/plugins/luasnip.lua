@@ -1,10 +1,7 @@
 return {
     "L3MON4D3/LuaSnip",
     build = "make install_jsregexp",
-    keys = {
-        { "<C-n>", "<Plug>luasnip-next-choice", mode = { "i", "s" }, desc = "Select the next choice in a snippet" },
-        { "<C-p>", "<Plug>luasnip-prev-choice", mode = { "i", "s" }, desc = "Select the previous choice in a snippek" },
-    },
+    lazy = false,
     config = function()
         local ls = require("luasnip")
 
