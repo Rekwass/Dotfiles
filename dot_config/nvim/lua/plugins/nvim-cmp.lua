@@ -44,8 +44,10 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm { select = true },
                 ["<C-Space>"] = cmp.mapping.complete(),
-                ['<C-j>'] = cmp.mapping.scroll_docs(4),
-                ['<C-k>'] = cmp.mapping.scroll_docs(-4),
+                ["<C-j>"] = cmp.mapping.scroll_docs(4),
+                ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-n>"] = function() luasnip.change_choice(1) end,
+                ["<C-p>"] = function() luasnip.change_choice(-1) end,
                 ["<ESC>"] = cmp.mapping.abort(),
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
