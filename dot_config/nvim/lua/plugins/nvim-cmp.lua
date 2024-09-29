@@ -46,8 +46,12 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-j>"] = cmp.mapping.scroll_docs(4),
                 ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-n>"] = function() luasnip.change_choice(1) end,
-                ["<C-p>"] = function() luasnip.change_choice(-1) end,
+                ["<C-n>"] = cmp.mapping(function()
+                    luasnip.change_choice(1)
+                end, { "i", "s" }),
+                ["<C-p>"] = cmp.mapping(function()
+                    luasnip.change_choice(-1)
+                end, { "i", "s" }),
                 ["<ESC>"] = cmp.mapping.abort(),
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
