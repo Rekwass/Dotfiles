@@ -4,6 +4,9 @@ return {
     ft = { "markdown" },
     cmd = "PeekOpen",
     build = "deno task --quiet build:fast",
+    keys = {
+        { "<leader>fmt", ":'<,'>!tr -s ' ' | column -t -s '|' -o '|'<CR>", desc = "Format markdown table", mode = "v" },
+    },
     config = function()
         require("peek").setup(
             {
