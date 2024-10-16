@@ -174,15 +174,10 @@ ctrl + shift + alt - l : yabai -m window --swap east
 shift + alt + cmd - h : yabai -m window --space prev
 shift + alt + cmd - l : yabai -m window --space next
 
+# Move to previous or next workspace
+alt + cmd - j : yabai -m space --focus prev || yabai -m space --focus last
+alt + cmd - k : yabai -m space --focus next || yabai -m space --focus first
+
 # Cycles window position and size with window clockwise and counter clockwise
 ctrl + shift + alt - i : ~/.config/skhd/custom_commands/cycle_clockwise.sh
 ctrl + shift + alt - o : ~/.config/skhd/custom_commands/cycle_counterclockwise.sh
-
-# Open browser with different profiles
-# `export MOZ_DISABLE_SAFE_MODE_KEY=1` is required to prevent from opening troubleshooting mode while pressing `alt`
-# This can be avoided by changing my keybind not to use the `alt` key or to remove my finger fast enough, but I am getting to old for this...
-# I prefer using `open` rather than calling the binary directly as it always bring the app in the foreground
-ctrl + alt - v : export MOZ_DISABLE_SAFE_MODE_KEY=1; open -na /Applications/Firefox.app/Contents/MacOS/firefox --args -P Entreprise
-ctrl + alt - b : export MOZ_DISABLE_SAFE_MODE_KEY=1; open -na /Applications/Firefox.app/Contents/MacOS/firefox --args -P Perso
-ctrl + alt - n : export MOZ_DISABLE_SAFE_MODE_KEY=1; open -na /Applications/Firefox.app/Contents/MacOS/firefox --args -P Epitech
-ctrl + alt - m : export MOZ_DISABLE_SAFE_MODE_KEY=1; open -na /Applications/Firefox.app/Contents/MacOS/firefox --args -P Laval
