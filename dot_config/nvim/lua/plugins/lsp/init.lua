@@ -4,6 +4,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "Hoffs/omnisharp-extended-lsp.nvim"
     },
+    tag = "v1.0.0",
     config = function()
         local borderStyle = "rounded"
 

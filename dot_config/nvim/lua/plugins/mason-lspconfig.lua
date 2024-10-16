@@ -9,6 +9,7 @@ return {
             "cssls",
             "dockerls",
             "eslint",
+            "fsautocomplete",
             "html",
             "jsonls",
             "lua_ls",
