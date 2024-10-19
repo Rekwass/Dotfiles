@@ -22,14 +22,14 @@ return {
         }
 
         -- Haskell
-        dap.adapters.haskell = {
+        dap.adapters.haskell_debug_adapter = {
             type = 'executable',
             command = 'haskell-debug-adapter',
             args = { '--hackage-version=0.0.33.0' },
         }
         dap.configurations.haskell = {
             {
-                type = 'haskell',
+                type = 'haskell_debug_adapter',
                 request = 'launch',
                 name = 'Debug',
                 workspace = '${workspaceFolder}',
@@ -70,6 +70,47 @@ return {
             },
         }
         dap.configurations.c = dap.configurations.cpp
+
+        -- Python
+        dap.adapters.debugpy = function(cb, _)
+            local port
+            if vim.g['debugpy_last_port'] ~= nil then
+                port = vim.g['debugpy_last_port']
+            else
+                port = tonumber(vim.fn.input("Port: "))
+                vim.g['debugpy_last_port'] = port
+            end
+            local host = '127.0.0.1'
+            cb({
+                type = 'server',
+                port = assert(port, '`connect.port` is required for a python `attach` configuration'),
+                host = host,
+                options = {
+                    source_filetype = 'python',
+                },
+            })
+        end
+
+        dap.configurations.python = {
+            {
+                type = 'debugpy',
+                request = 'attach',
+                name = "Launch file",
+                -- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
+
+                program = "${file}", -- This configuration will launch the current file if used.
+                pythonPath = function()
+                    local cwd = vim.fn.getcwd()
+                    if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+                        return cwd .. '/venv/bin/python'
+                    elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+                        return cwd .. '/.venv/bin/python'
+                    else
+                        return '/opt/homebrew/bin/python3'
+                    end
+                end,
+            },
+        }
     end,
     keys = {
         { "<leader>bp",  "<cmd>lua require(\"dap\").toggle_breakpoint()<CR>", desc = "Toggle breakpoint",           silent = true, },
