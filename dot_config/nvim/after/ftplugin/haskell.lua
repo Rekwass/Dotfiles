@@ -1,8 +1,10 @@
 local ht = require('haskell-tools')
 local bufnr = vim.api.nvim_get_current_buf()
 local opts = { noremap = true, silent = true, buffer = bufnr, }
+
 -- Hoogle search for the type signature of the definition under the cursor
--- vim.keymap.set('n', '<leader>hs', ht.hoogle.hoogle_signature, opts)
+vim.keymap.set('n', '<leader>H', ht.hoogle.hoogle_signature, opts)
+
 -- Toggle a GHCi repl for the current package
 -- vim.keymap.set('n', '<leader>rr', ht.repl.toggle, opts)
 

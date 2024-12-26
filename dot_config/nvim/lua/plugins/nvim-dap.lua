@@ -118,5 +118,6 @@ return {
         { "<leader>so",  "<cmd>lua require(\"dap\").step_over()<CR>",         desc = "Step to next instruction",    silent = true, },
         { "<leader>dc",  "<cmd>lua require(\"dap\").continue()<CR>",          desc = "Continue to next breakpoint", silent = true, },
         { "<leader>dl",  "<cmd>lua require(\"dap\").run_last()<CR>",          desc = "Continue to last breakpoint", silent = true, },
+        { "<leader>dq",  "<cmd>lua require(\"dap\").terminate()<CR>",         desc = "Terminate session",           silent = true, },
     }
 }

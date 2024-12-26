@@ -7,6 +7,7 @@ return {
     keys = {
         { "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files()<CR>", desc = "Open Telescope with the find_files picker" },
         { "<leader>fg", "<Cmd>lua require(\"telescope.builtin\").live_grep()<CR>",  desc = "Open Telescope with the live_grep picker" },
+        { "<leader>fh", "<Cmd>Telescope hoogle<CR>",                                desc = "Open Telescope for Hoogle" },
     },
     config = function()
         local telescope = require("telescope");
@@ -51,5 +52,6 @@ return {
         })
 
         telescope.load_extension("fzf")
+        telescope.load_extension("hoogle")
     end
 }
