@@ -2,7 +2,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = {
         ensure_installed = {
-            "asm_lsp",
             "bashls",
             "clangd",
             "cmake",
