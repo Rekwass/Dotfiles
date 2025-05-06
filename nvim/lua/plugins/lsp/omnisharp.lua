@@ -16,7 +16,7 @@ M.configuration = {
         buf_set_keymap("n", "gr", "<Cmd>lua require('omnisharp_extended').lsp_references()<CR>")
     end,
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    cmd = { "dotnet", require("mason-registry").get_package("omnisharp").get_install_path("omnisharp") .. "/omnisharp/libexec/OmniSharp.dll" },
+    cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
     settings = {
         FormattingOptions = {
             -- Enables support for reading code style, naming convention and analyzer

@@ -51,8 +51,7 @@ return {
             type = "server",
             port = "${port}",
             executable = {
-                command = require("mason-registry").get_package("codelldb").get_install_path("codelldb") ..
-                    "/codelldb/extension/adapter/codelldb",
+                command =  vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
                 args = { "--port", "${port}" },
             }
         }
