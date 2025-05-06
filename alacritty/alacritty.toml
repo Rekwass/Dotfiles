@@ -1,4 +1,3 @@
-
 # shell = { program = "/bin/zsh", args = ["-l"] }
 # [shell]
 # program = "/bin/zsh"
