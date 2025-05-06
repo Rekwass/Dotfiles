@@ -25,7 +25,8 @@ return {
         },
     },
     keys = {
-        { "<c-n>", "<cmd>Neotree toggle filesystem left<cr>", desc = "Toggle NeoTree filesystem on the left" },
+        { "<c-n>",     "<cmd>Neotree toggle filesystem left<cr>", desc = "Toggle NeoTree filesystem on the left" },
+        { "<leader>n", "<cmd>Neotree reveal<cr>",                 desc = "Reveal current file in NeoTree filesystem on the left" }
     },
     opts = {
         close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab

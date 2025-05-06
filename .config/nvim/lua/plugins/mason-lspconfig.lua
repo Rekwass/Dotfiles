@@ -2,6 +2,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = {
         ensure_installed = {
+            "angularls",
             "bashls",
             "clangd",
             "cmake",
@@ -9,7 +10,6 @@ return {
             "dockerls",
             "eslint",
             "fsautocomplete",
-            "html",
             "jsonls",
             "lua_ls",
             "omnisharp",

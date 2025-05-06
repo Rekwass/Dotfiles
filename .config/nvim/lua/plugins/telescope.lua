@@ -2,7 +2,7 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        "nvim-telescope/telescope-fzf-native.nvim",
+        'nvim-telescope/telescope-fzf-native.nvim',
     },
     keys = {
         { "<leader>ff", "<Cmd>lua require(\"telescope.builtin\").find_files()<CR>", desc = "Open Telescope with the find_files picker" },

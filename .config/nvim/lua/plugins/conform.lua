@@ -31,6 +31,7 @@ return {
         formatters_by_ft = {
             python = { "isort", "autopep8" },
             cs = { "csharpier" },
+            typescript = { "prettier" },
         },
         -- Set default options
         default_format_opts = {

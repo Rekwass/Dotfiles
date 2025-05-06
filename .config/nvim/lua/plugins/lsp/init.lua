@@ -2,7 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        "Hoffs/omnisharp-extended-lsp.nvim"
+        "Hoffs/omnisharp-extended-lsp.nvim",
     },
     tag = "v1.0.0",
     config = function()
@@ -76,9 +76,10 @@ return {
         -- Indentation to 2 locally on buffers of certain filetypes
         vim.api.nvim_create_autocmd("FileType", {
             desc = "Set indentation to 2 for certain filetypes",
-            pattern = { "typescript", "javascript", "html", "json", "yaml" },
+            pattern = { "typescript", "javascript", "html", "json", "yaml", "css", "scss" },
             group = vim.api.nvim_create_augroup("indent_of_two", { clear = true }),
             callback = function()
+                vim.opt.expandtab = false    -- Insert tabs instead of spaces
                 vim.opt_local.shiftwidth = 2 -- Number of spaces for auto-indent
                 vim.opt_local.tabstop = 2    -- Number of spaces per tab
             end,
