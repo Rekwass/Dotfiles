@@ -12,6 +12,9 @@ vim.opt.foldlevel = 99 --  Sets default folding level to 99
 vim.opt.number = true -- Display line numbers
 vim.opt.relativenumber = true -- Print offset from highlighted line
 vim.opt.scrolloff = 100 -- Make the cursor see x lines above cursor
+vim.opt.wrap = true --  Enable line wrap
+vim.opt.linebreak = true -- Break lines in the middle of a word
+vim.opt.breakindent = true -- Indent wrapped lines visually
 vim.opt.showbreak = "↪" -- Show line wrapping character
 vim.opt.pumheight = 15 -- Maximum number of items to show in the popup menu
 vim.opt.ignorecase = true -- Ignore the case when searching
@@ -23,14 +26,15 @@ vim.opt.expandtab = true -- Insert spaces instead of tabs
 vim.opt.smartindent = true -- Automatically indents on patterns (e.g.: {, })
 vim.opt.mouse = "" -- Disables mouse because why would you need your mouse when using nvim ?
 
-vim.opt.backup = true -- Enables backups
-vim.opt.undofile = true -- Enable persistent undo
+
+vim.opt.backup = true                                                    -- Enables backups
+vim.opt.undofile = true                                                  -- Enable persistent undo
 vim.opt.backupdir = { "~/.nvim-backup-files", "/tmp/nvim-backup-files" } -- Specify backups directories
-vim.opt.undodir = "/tmp/nvim-undo-history" -- Specify undo directory
+vim.opt.undodir = "/tmp/nvim-undo-history"                               -- Specify undo directory
 
-vim.opt.updatetime = 250 -- Update time in milliseconds before writing in a swap file /!\ Time before diagnositc is displayed
+vim.opt.updatetime = 250                                                 -- Update time in milliseconds before writing in a swap file /!\ Time before diagnositc is displayed
 
-vim.opt.confirm = true -- Prompts when attempting to leave file with changes left to save instead of an error
+vim.opt.confirm = true                                                   -- Prompts when attempting to leave file with changes left to save instead of an error
 
 require("config.lazy")
 
