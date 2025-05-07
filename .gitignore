@@ -1,12 +1,8 @@
-coc/
-configstore/
-filezilla/
-htop/
-exercism/
-Microsoft\\VisualStudio\ Services
-xbuild/
-simple-update-notifier/
-NuGet/
-chezmoi/
-jgit/
-zed/
+*
+
+!.gitignore
+!alacritty
+!arkenfox
+!nvim
+!yabai
+!dot_zshrc
