@@ -1,8 +1,8 @@
 *
 
 !.gitignore
-!alacritty
-!arkenfox
-!nvim
-!yabai
+!alacritty/*
+!arkenfox/*
+!nvim/*
+!yabai/*
 !dot_zshrc
