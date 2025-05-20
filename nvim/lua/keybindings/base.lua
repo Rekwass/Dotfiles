@@ -11,7 +11,7 @@ map("v", "<leader>p", "\"+p")
 -- Buffer manipulation
 map("n", "<leader>T", "<Cmd>enew<CR>")
 map("n", "<leader>bq", "<Cmd>bp <BAR> bd #<CR>")
-map("n", "<leader>baq", "<Cmd>bufdo bd<CR>")
+map("n", "<leader>baq", "<Cmd>bufdo bd<CR>|<Cmd>Dashboard<CR>")
 
 -- Really remove search highlight
 map("n", "//", "<Cmd>nohl<CR>")
