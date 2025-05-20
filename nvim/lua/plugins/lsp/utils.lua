@@ -27,7 +27,9 @@ local lsps = getAllLSP()
 --- Setup all LSPs
 M.setupAll = function()
     for name, lsp in pairs(lsps) do
-        lspcfg[name].setup(lsp.configuration)
+        if (name ~= "omnisharp") then
+            lspcfg[name].setup(lsp.configuration)
+        end
     end
 end
 
