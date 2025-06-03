@@ -67,7 +67,7 @@ return {
 					{
 						desc = '󰏖 .files',
 						group = 'ErrorMsg',
-						action = "lua require(\"telescope.builtin\").find_files({ cwd = \"" .. vim.uv.os_homedir() .. "/.config/nvim/\" })",
+						action = "lua require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })",
 						key = 'd',
 					},
 					{ desc = '󰩈 Quit', group = '@comment', action = 'quit', key = 'q' },
