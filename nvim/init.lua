@@ -21,7 +21,7 @@ vim.opt.smartcase = true -- Use smartcase when searching
 
 vim.opt.shiftwidth = 4 -- Number of spaces for auto-indent
 vim.opt.tabstop = 4 -- Number of spaces per tab
-vim.opt.expandtab = false -- Insert tabs instead of spaces
+vim.opt.expandtab = true -- Insert spaces instead of tabs
 vim.opt.smartindent = true -- Automatically indents on patterns (e.g.: {, })
 
 vim.opt.mouse = "" -- Disables mouse because why would you need your mouse when using nvim ?
