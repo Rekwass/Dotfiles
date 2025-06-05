@@ -53,5 +53,6 @@ return {
 
         telescope.load_extension("fzf")
         telescope.load_extension("hoogle")
+        telescope.load_extension("fidget")
     end
 }
