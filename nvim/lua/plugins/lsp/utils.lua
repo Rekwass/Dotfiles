@@ -1,6 +1,5 @@
 local M = {}
 
-local lspcfg = require("lspconfig")
 local mason = require("mason-lspconfig")
 
 --- Retrieve every LSPs configurations
@@ -27,9 +26,8 @@ local lsps = getAllLSP()
 --- Setup all LSPs
 M.setupAll = function()
     for name, lsp in pairs(lsps) do
-        if (name ~= "omnisharp") then
-            lspcfg[name].setup(lsp.configuration)
-        end
+        vim.lsp.config(name, lsp.configuration)
+        vim.lsp.enable(name);
     end
 end
 
@@ -37,14 +35,16 @@ end
 --- @param lspNames string[] Array of server names
 M.setupMany = function(lspNames)
     for _, lspName in ipairs(lspNames) do
-        lspcfg[lspName].setup(lsps[lspName].configuration)
+        vim.lsp.config(lspName, lsps[lspName].configuration)
+        vim.lsp.enable(lspName);
     end
 end
 
 --- Setup one LSP
 --- @param lspName string
 M.setupOne = function(lspName)
-    lspcfg[lspName].setup(lsps[lspName].configuration)
+    vim.lsp.config(lspName, lsps[lspName].configuration)
+    vim.lsp.enable(lspName);
 end
 
 return M

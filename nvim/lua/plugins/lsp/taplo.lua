@@ -1,7 +1,9 @@
 local M = {}
 
 M.configuration = {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    cmd = { 'taplo', 'lsp', 'stdio' },
+    filetypes = { 'toml' },
+    root_markers = { '.taplo.toml', 'taplo.toml', '.git' },
 }
 
 return M

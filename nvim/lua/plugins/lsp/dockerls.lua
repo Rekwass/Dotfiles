@@ -1,7 +1,9 @@
 local M = {}
 
 M.configuration = {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    cmd = { 'docker-langserver', '--stdio' },
+    filetypes = { 'dockerfile' },
+    root_markers = { 'Dockerfile' },
 }
 
 return M

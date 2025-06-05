@@ -15,8 +15,24 @@ M.configuration = {
         -- replaces vim.lsp.buf.references()
         buf_set_keymap("n", "gr", "<Cmd>lua require('omnisharp_extended').lsp_references()<CR>")
     end,
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+    cmd = {
+        vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
+        '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
+        '--hostPID',
+        tostring(vim.fn.getpid()),
+        'DotNet:enablePackageRestore=false',
+        '--encoding',
+        'utf-8',
+        '--languageserver',
+    },
+    filetypes = { 'cs', 'vb' },
+    root_markers = { '.sln', '.csproj', 'omnisharp.json', 'function.json' },
+    init_options = {},
+    capabilities = {
+        workspace = {
+            workspaceFolders = false, -- https://github.com/OmniSharp/omnisharp-roslyn/issues/909
+        },
+    },
     settings = {
         FormattingOptions = {
             -- Enables support for reading code style, naming convention and analyzer
@@ -48,6 +64,13 @@ M.configuration = {
             -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
             -- true
             AnalyzeOpenDocumentsOnly = nil,
+            -- Enables the possibility to see the code in external nuget dependencies
+            EnableDecompilationSupport = true,
+        },
+        RenameOptions = {
+            RenameInComments = nil,
+            RenameOverloads = nil,
+            RenameInStrings = nil,
         },
         Sdk = {
             -- Specifies whether to include preview versions of the .NET SDK when

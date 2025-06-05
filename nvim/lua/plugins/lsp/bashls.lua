@@ -1,7 +1,14 @@
 local M = {}
 
 M.configuration = {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    cmd = { "bash-language-server", "start" },
+    filetypes = { "bash", "sh" },
+    root_markers = { ".git" },
+    settings = {
+        bashIde = {
+            globPattern = "*@(.sh|.inc|.bash|.command)"
+        }
+    }
 }
 
 return M

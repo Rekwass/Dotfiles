@@ -87,6 +87,11 @@ return {
 
         local lsps = require("plugins.lsp.utils")
 
+        vim.lsp.config("*", {
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            root_markers = { '.git' },
+        })
+
         lsps.setupAll();
     end,
 }

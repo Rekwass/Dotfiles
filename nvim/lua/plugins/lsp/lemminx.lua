@@ -1,7 +1,9 @@
 local M = {}
 
 M.configuration = {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    cmd = { 'lemminx' },
+    filetypes = { 'xml', 'xsd', 'xsl', 'xslt', 'svg' },
+    root_markers = { '.git' },
 }
 
 return M
