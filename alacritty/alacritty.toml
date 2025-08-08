@@ -18,11 +18,11 @@ bindings = [
   { key = "Right", mods = "Command", chars = "\u001BOF", mode = "AppCursor" }, # End, was '\x1b0F'
 ]
 
-[window]
-decorations = "none"
-
 [general]
 import = [
   "~/.config/alacritty/themes/blood_moon.toml",
   # "~/.config/alacritty/themes/nord.toml"
   ]
+
+[env]
+TERM = "xterm-256color"
