@@ -73,5 +73,6 @@ require("lazy").setup({
         border = "rounded",
     },
     -- Colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "nightfox" } },
+    install = { colorscheme = { "catppuccin-latte" } },
+    -- install = { colorscheme = { "nightfox" } },
 })
